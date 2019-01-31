@@ -101,14 +101,23 @@ Well, I want to do something like ls (or many other commands), but I want it in 
 Now returns:
 
 `total 36K
+
 drwxr-xr-x 2 thin thin 4.0K Dec  7  2017 Desktop
+
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Documents
+
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Downloads
+
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Music
+
 drwxr-xr-x 3 thin thin 4.0K Jul 28  2017 Pictures
+
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Public
+
 drwxr-xr-x 2 root root 4.0K Dec  7  2017 scripts
+
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Templates
+
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Videos`
 
 # The -l option for ls returns what is called the long list format.
