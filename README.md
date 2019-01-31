@@ -238,124 +238,95 @@ Note, if a file is shorter than the number of desired lines in the head, then it
 
 ## tail
 
-# You may be interested to see only the end of the file instead of the whole file.
-# This is where you will use the tail command.
-# This command is particularly useful when a software package is writing to a file and you would like to check on the progress of it by looking to see what the last item written was.
-# You can call it using tail followed by the filename, like:
+You may be interested to see only the end of the file instead of the whole file. This is where you will use the `tail` command. This command is particularly useful when a software package is writing to a file and you would like to check on the progress of it by looking to see what the last item written was. You can call it using `tail` followed by the filename, like:
 
-tail animal_noises.txt
+`tail animal_noises.txt`
 
-# It will, by default, return the last 10 lines of the file.
-# Similarly to the head command, you can alter this with the -n option.
-# So it you want the last line of a file or the last 11 lines of a file you could use the following commands, respectively:
+It will, by default, return the last 10 lines of the file. Similarly to the `head` command, you can alter this with the `-n` option. So if you want the last line of a file or the last 11 lines of a file you could use the following commands, respectively:
 
-tail -n 1 animal_noises.txt
+`tail -n 1 animal_noises.txt`
 
-tail -n 11 animal_noises.txt
+`tail -n 11 animal_noises.txt`
 
-####### less #######
+## less
 
-# You may also be interested in viewing a file, but you don't want to print out the file.
-# This is when you would use the less command.
-# Sidenote: There is also a more command and the functionality is largely similarly to less, but I think the general consensus is that less is a bit better.
-# Because of this the more command will be outside the scope of this course.
-# To use the less command type less followed by the file name, like:
+You may also be interested in viewing a file, but you don't want to print out the file. This is when you would use the `less` command.
+Sidenote: There is also a more command and the functionality is largely similarly to less, but I think the general consensus is that less is a bit better. Because of this the `more` command will be outside the scope of this course.
+To use the `less` command type less followed by the file name, like:
 
-less O_niloticus_missense.txt
+`less O_niloticus_missense.txt`
 
-# You can use the arrows on your keyboard to scroll up and down this file (like in the man command).
-# You can also use space to go down a whole page (like in the man command).
-# You can exit less by pressing q.
+You can use the arrows on your keyboard to scroll up and down this file (like in the `man` command). You can also use space to go down a whole page (like in the `man` command). You can exit `less` by pressing `q`.
 
-# Also, less has a search feature.
-# If you would like to search forward in the file it that require you to press / followed by typing your search term followed by Enter
-# If you would like to search backward in the the file it requires that you press ? followed by typing your search term followed by Enter
-# This will highlight the results of your search.
-# Your can press n to go to the next hit (forward or backward depending on your previously stated search direction) in your search
+Also, less has a search feature. If you would like to search forward in the file it that require you to press `/` followed by typing your search term followed by `Enter`. If you would like to search backward in the the file it requires that you press `?` followed by typing your search term followed by `Enter`. This will highlight the results of your search. You can press `n` to go to the next hit (forward or backward depending on your previously stated search direction) in your search
 
-# For example once you have called less O_niloticus_missense.txt, you can press / then enter LG2 and press enter.
-# This will find the first instance of LG2 going forward in the file from your current location.
-# You can press n to go to the next occurrence.
+For example once you have called `less mutations.txt`, you can press `/` then enter `LG2` and press `Enter`. This will find the first instance of LG2 going forward in the file from your current location. You can press `n` to go to the next occurrence.
 
-# Other useful aspects of less include the use of < and >
-# While having a file open in less, you can press > to go to the end of the file or < to go to the beginning of the file.
+Other useful aspects of `less` include the use of `<` and `>`. While having a file open in `less`, you can press `>` to go to the end of the file or `<` to go to the beginning of the file.
 
-######## cp #########
+## cp
 
-# You may be interested in copying a file.
-# The cp command will CoPy a file.
-# The syntax for using the cp command is cp followed by the the path (absolute or relative) of the file and then followed by the path to the new copy
-# If you wanted to make a copy of the animal_noises.txt and call it animal_noises_2.txt and you were in the directory that contained animal_noises.txt, then you could use:
+You may be interested in copying a file. The `cp` command will CoPy a file. The syntax for using the copy command is `cp` followed by the the path (absolute or relative) of the file and then followed by the path to the new copy. If you wanted to make a copy of the animal_noises.txt and call it animal_noises_2.txt and you were in the directory that contained animal_noises.txt, then you could use:
 
-cp animal_noises.txt animal_noises_2.txt
+`cp animal_noises.txt animal_noises_2.txt`
 
-# If the path to animal_noises.txt was /Users/Will/Documents/animal_noises.txt then you could also use:
+If the path to `animal_noises.txt` was `/Users/Will/Documents/animal_noises.txt` then you could also use:
 
-cp /Users/Will/Documents/animal_noises.txt /Users/Will/Documents/animal_noises_2.txt
+`cp /Users/Will/Documents/animal_noises.txt /Users/Will/Documents/animal_noises_2.txt`
 
-# Now, you might also be interested in copying this file to a different directory, /Users/Will/Music/, and you wanted to keep the same name, then you could use
+Now, you might also be interested in copying this file to a different directory, `/Users/Will/Music/`, and you wanted to keep the same name, then you could use:
 
-cp /Users/Will/Documents/animal_noises.txt /Users/Will/Music/animal_noises.txt
+`cp /Users/Will/Documents/animal_noises.txt /Users/Will/Music/animal_noises.txt`
 
-# Or if you were in /Users/Will/Documents/ and you wanted to use relative paths then you could use:
+Or if you were in `/Users/Will/Documents/` and you wanted to use relative paths then you could use:
 
-cp animal_noises.txt ../Music/animal_noises.txt
+`cp animal_noises.txt ../Music/animal_noises.txt`
 
-# Or you could use a mix of absolute and relative paths if you are in /Users/Will/Documents/, either:
+Or you could use a mix of absolute and relative paths if you are in `/Users/Will/Documents/`, either:
 
-cp /Users/Will/Documents/animal_noises.txt ../Music/animal_noises.txt
+`cp /Users/Will/Documents/animal_noises.txt ../Music/animal_noises.txt`
 
-# Or
+Or
 
-cp animal_noises.txt /Users/Will/Music/animal_noises.txt
+`cp animal_noises.txt /Users/Will/Music/animal_noises.txt`
 
-# You could also use the ~ and do something like:
+You could also use the `~` and do something like:
 
-cp animal_noises.txt ~/Music/animal_noises.txt
+`cp animal_noises.txt ~/Music/animal_noises.txt`
 
-# It can also be noted that you do not need to be in any specific directory to copy files between directories.
-# You could be in /Users/Will/Photos/ and move animal_noises.txt from /Users/Will/Documents/ to /Users/Will/Music/ using:
+It can also be noted that you do not need to be in any specific directory to copy files between directories. You could be in `/Users/Will/Photos/` and move `animal_noises.txt` from `/Users/Will/Documents/` to `/Users/Will/Music/` using:
 
-cp /Users/Will/Documents/animal_noises.txt /Users/Will/Music/animal_noises.txt
+`cp /Users/Will/Documents/animal_noises.txt /Users/Will/Music/animal_noises.txt`
 
-# Or
+Or
 
-cp ../Documents/animal_noises.txt ../Music/animal_noises.txt
+`cp ../Documents/animal_noises.txt ../Music/animal_noises.txt`
 
-# Also, for files where you want to keep the name the same, it is not necesscary to write out the name of the file in the path where the file will be placed.
-# For example, the previous command could also be:
+Also, for files where you want to keep the name the same, it is not necesscary to write out the name of the file in the path where the file will be placed. For example, the previous command could also be:
 
-cp ../Documents/animal_noises.txt ../Music/
+`cp ../Documents/animal_noises.txt ../Music/`
 
-# There are tons of combinations that cp can be used in that are equivalent and you can choose when and how you'd like to uses each one.
+There are tons of combinations that `cp` can be used in that are equivalent and you can choose when and how you'd like to uses each one.
 
-# Instead of copying files, you may be interested in copying directories.
-# In order to copy directories, you need to use the -R or -r (they are the same for this command) option, which stands for recursive
-# If you want to copy the directory iTunes_library/ from /Users/Will/Music/ to /Users/Anja/Music/, then you would use the following:
+Instead of copying files, you may be interested in copying directories. In order to copy directories, you need to use the `-R` or `-r` (they are the same for this command) option, which stands for recursive. If you want to copy the directory `iTunes_library/` from `/Users/Will/Music/` to `/Users/Anja/Music/`, then you would use the following:
 
-cp -R /Users/Will/Music/iTunes_library/ /Users/Anja/Music/iTunes_library/
+`cp -R /Users/Will/Music/iTunes_library/ /Users/Anja/Music/iTunes_library/`
 
-# However, note this would only work if /Users/Anja/Music/iTunes_library/ did not already exist.
-# If /Users/Anja/Music/iTunes_library/ did exist then the copied iTunes_library/ would be in /Users/Anja/Music/iTunes_library/iTunes_library/ and you'd rather want to use:
+However, note this would only work if `/Users/Anja/Music/iTunes_library/` did not already exist. If `/Users/Anja/Music/iTunes_library/` did exist then the copied `iTunes_library/` would be in `/Users/Anja/Music/iTunes_library/iTunes_library/` and you'd rather want to use:
 
-cp -R /Users/Will/Music/iTunes_library/ /Users/Anja/Music/
+`cp -R /Users/Will/Music/iTunes_library/ /Users/Anja/Music/`
 
-# Lastly, if you cp something to a file the already contains something by that same name, then it will overwrite it without asking.
-# If you do not like this behavior then you can use the -i option, which will ask you if you wish to overwrite a file
+Lastly, if you copy something to a file the already contains something by that same name, then it will overwrite it without asking. If you do not like this behavior then you can use the `-i` option, which will ask you if you wish to overwrite a file
 
 ########### . ##########
 
-# Now is a good time to talk about the .
-# . stands for your current directory
-# So you could also copy items from elsewhere to your current directory using the period
-# Let's pretend that you were in /Users/Will/Music/ and you wanted to move animal_noises.txt, which is located at /Users/Will/Documents/animal_noises.txt, to this directory
-# Then you could use:
+Now is a good time to talk about the `.` symbol. The `.` stands for your current directory. So, you could also copy items from elsewhere to your current directory using the `.`. Let's pretend that you were in `/Users/Will/Music/` and you wanted to move `animal_noises.txt`, which is located at `/Users/Will/Documents/animal_noises.txt`, to this directory. Then you could use:
 
-cp /Users/Will/Documents/animal_noises.txt .
+`cp /Users/Will/Documents/animal_noises.txt .`
 
-# Or
+Or
 
-cp ../Documents/animal_noises.txt .
+`cp ../Documents/animal_noises.txt .`
 
 ########### mv ##########
 
