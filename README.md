@@ -100,46 +100,28 @@ Well, I want to do something like ls (or many other commands), but I want it in 
 
 Now returns:
 
-`total 36K
-
+```total 36K
 drwxr-xr-x 2 thin thin 4.0K Dec  7  2017 Desktop
-
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Documents
-
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Downloads
-
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Music
-
 drwxr-xr-x 3 thin thin 4.0K Jul 28  2017 Pictures
-
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Public
-
 drwxr-xr-x 2 root root 4.0K Dec  7  2017 scripts
-
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Templates
+drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Videos```
 
-drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Videos`
+The -l option for ls returns what is called the long list format. The first column tell you the permissions for the file or directory (who can do what to the directory or file). The third column is the owner of the directory or file. The fourth column is which group the owner belongs to. The fifth column tell you the size in bytes of the file or directory. However, directory sizes are strange and this number doesn't correspond the the amounts of space that the contents of the directory take up. I believe the default on the lab computers is to use the -h option that we will talk about next though. The sixth column tell you the last time this directory or folder was modified and the seventh and final column tell you the name of the file of directory.
 
-# The -l option for ls returns what is called the long list format.
-# The first column tell you the permissions for the file or directory (who can do what to the directory or file).
-# The third column is the owner of the directory or file.
-# The fourth column is which group the owner belongs to
-# The fifth column tell you the size in bytes of the file or directory. However, directory sizes are strange and this number doesn't correspond the the amounts of space that the contents of the directory take up. I believe the default on the lab computers is to use the -h option that we will talk about next though.
-# The sixth column tell you the last time this directory or folder was modified
-# And the seventh and final column tell you the name of the file of directory
+You can put multiple options together in the same command. Personally, I like to add the -l and the -h options to my ls commands. `-h` changes the file sizes output in the fifth column to be human-readable (in other words, use the kilobyte, megabyte, gigabyte notation). For example, my earlier ls command `ls -l /home/thin/` modified with the `-h` option
 
-# You can put multiple options together in the same command
-# Personally, I like to add the -l and the -h options to my ls commands
-# -h changes the file sizes output in the fifth column to be human-readable (in other words, use the kilobyte, megabyte, gigabyte notation)
-# For example, my earlier ls command ls -l /home/thin/ modified with the -h option
+`ls -l -h /home/thin`
 
-ls -l -h /home/thin
+Or even better you can collapse the options, so that it looks like this
 
-# Or even better you can collapse the options, so that it looks like this
+`ls -lh /home/thin`
 
-ls -lh /home/thin
-
-# However, as I said earlier the default on the lab computers is to have -h
+However, as I said earlier the default on the lab computers is to have -h
 
 
 ########## man ########
