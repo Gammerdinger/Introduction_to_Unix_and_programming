@@ -126,106 +126,76 @@ Or even better you can collapse the options, so that it looks like this
 However, as I said earlier the default on the lab computers is to have -h
 
 
-########## man ########
+## man
 
-# At this point you are probably thinking, "Gee, it sure is great that Will can just tell me the options I need to know, but what if Will isn't around or I want to see other options?"
-# That is where the man command comes in
-# You can put man in front of any command and it will bring you up the MANual on how to use that command.
-# For example you can read the manual for the ls command
+At this point you are probably thinking, "Gee, it sure is great that Will can just tell me the options I need to know, but what if Will isn't around or I want to see other options?" That is where the `man` command comes in. You can put `man` in front of any command and it will bring you up the MANual on how to use that command. For example you can read the manual for the ls command using:
 
-man ls
+`man ls`
 
-# To navigate the manual you can use the up or down arrows on your keyboard
-# You can also use the space bar and it will skip down a full page
-# You will see here that there are MANY options for ls (including the -a option I mentioned earlier for showing hidden files). Many of these have specific uses and I rarely use them.
-# To exit the manual just hit q to Quit
+To navigate the manual you can use the up or down arrows on your keyboard. You can also use the space bar and it will skip down a full page. You will see here that there are MANY options for ls (including the -a option I mentioned earlier for showing hidden files). Many of these have specific uses and I rarely use them. To exit the manual just hit `q` to Quit
 
-########## tab-completion #######
+## Tab-completion
 
-# Before we get any further, I want to save you and myself a lot of headaches by teaching you tab-completion.
-# I know it feels a bit foreign at first but over time it will feel natural
+Before we get any further, I want to save you and myself a lot of headaches by teaching you tab-completion. I know it feels a bit foreign at first but over time it will feel natural.
 
-# What is tab-completion and why does Will insist that I use it?
-# Tab-completion is a nifty trick to save time when type by pressing tab.
-# Once you are typing something that becomes unique to that folder, press tab and it will auto-complete the writing
-# Let's imagine this was my photo directory:
+What is tab-completion and why does Will insist that I use it? Tab-completion is a nifty trick to save time when type by pressing tab. Once you are typing something that becomes unique to that folder, press tab and it will auto-complete the writing. Let's imagine this was my photo directory:
 
+```
 picture_1.jpg
 picture_2.jpg
 beach_picture.jpg
 besties.jpg
+```
 
-# When I type "ls -lh bea" and press tab, it will complete it so that it is
+When I type `ls -lh bea` and press tab, it will complete it so that it is `ls -lh beach_picture.jpg`. However, if I were to type `ls -lh be` and press tab it would do nothing because there are two entries that both start with `be`. In this case, you can hit tab twice quickly in succession and it will show you all of the entries that start with "be".
 
-ls -lh beach_picture.jpg
+Also, I can type `ls -lh p` then press tab, and it will complete it until it is non-unique. In this case it would auto-fill it to `ls -lh picture_`
 
-# However, if I were to type "ls -lh be" and press tab it would do nothing because there are two entries that both start with "be"
-# In this case, you can hit tab twice quickly in succession and it will show you all of the entries that start with "be"
+So why do I, and as an extension you, care about tab-completion? First, and absolutely foremost, it cuts down on errors. A lot. Since typos wouldn't tab-complete it is a great way to catch typos, which is one of the most common problems when something isn't working. Second, it is going to save you a ton of keystrokes and time. I really can't emphasis this enough: Ingrain tab-completing as a habit.
 
-# Also, I can type "ls -lh p" then press tab, and it will complete it until it is non-unique
-# In this case it would auto-fill it to "ls -lh picture_"
+## cd 
 
-# So why do I, and as an extension you, care about tab-completion?
-# First, and absolutely foremost, it cuts down on errors.
-# A lot.
-# Since typos wouldn't tab-complete it is a great way to catch typos, which is one of the most common problems when something isn't working.
-# Second, it is going to save you a ton of keystrokes and time.
-# I really can't emphasis this enough: Ingrain tab-completing as a habit.
+You now know where you are with pwd and what is in any directory that you could want to access, however you likely want to know how to move between directories. This is the function of the cd command, which stands for Change Directory. To change directories, you use the cd command followed by the path (relative or absolute) to the directory you'd like to change to. In the above example, if you were in `/Users/Will/Music/iTunes_library/` and you wanted to go to `/Users/Will/Photos` you could go this by either of two ways:
 
-###### cd ######
+1) Using a relative path:
 
-# You now know where you are with pwd and what is in any directory that you could want to access, however you likely want to know how to move between directories
-# This is the function of the cd command, which stands for Change Directory
-# To change directories, you use the cd command followed by the path (relative or absolute) to the directory you'd like to change to
-# In the above example, if you were in /Users/Will/Music/iTunes_library/ and you wanted to go to /Users/Will/Photos you could go this by either of two ways:
+`cd ../../Photos`
 
-# 1) Using a relative path:
+2) Using an absolute path
 
-cd ../../Photos
+`cd /Users/Will/Photos`
 
-# 2) Using an absolute path
+Note, you can also use a path from your home directory. If your home directory was `/Users/Will/` and you wanted to go to `/Users/Will/Photos`, then you could use:
 
-cd /Users/Will/Photos
+`cd ~/Photos`
 
-# Note, you can also use a path from your home directory
-# If your home directory was /Users/Will/ and you wanted to go to /Users/Will/Photos, then you could use
+All of these ways are equivalent and which you use will likely depended on your preference
 
-cd ~/Photos
+## nano
 
-# All of these ways are equivalent and which you use will likely depended on your preference
+You have a wide variety of text editors to pick from. The most popular choices are probably Vim (vi) and emacs, for reasons that are outside of the scope of this course. However, I only know emacs and it can be a bit tricky for beginners so we are going to use a simple text editor called nano.  You can make a file by typing nano followed by the name of the file that you would like to make, like:
 
-###### nano ######
+`nano Hello_world.txt`
 
-# You have a wide variety of text editors to pick from.
-# The most popular choices are probably Vim (vi) and emacs, for reasons that are outside of the scope of this course.
-# However, I only know emacs and it can be a bit tricky for beginners so we are going to use a simple text editor called nano
-# You can make a file by typing nano followed by the name of the file that you would like to make, like:
+Once inside nano you can type `Hello world!!!`. You can exit nano by holding `Control` and pressing `x`. Then press `y` to save the changes. Then press `Enter` if you would like to save the file or you can change the name to something else and it will make a new file with that name.
 
-nano Hello_world.txt
+## cat 
 
-# Once inside nano you can type "Hello world"
-# You can exit nano by holding Control and pressing x 
-# Then press y to save the changes
-# Then press enter if you would like to save the file or you can change the name to something else and it will make a new file with that name.
+If you would like to display a full file you can use the `cat` command followed by the file name.  For example, if you would like to display the file, `Hello_world.txt` that you just made you can use the command:
 
-####### cat ########
+`cat Hello_world.txt`
 
-# If you would like to display a full file you can use the cat command followed by the file name
-# For example, if you would like to display the file, Hello_world.txt that you just made you can use the command:
+And it should return:
 
-cat Hello_world.txt
+`Hello world`
 
-# And it should return:
+You can also use `cat` to print out multiple files. Do to this, you will call `cat` followed by each file separated by a space (see spaces are important!!!)
 
-Hello world
+`cat animal_noises.txt Hello_world.txt`
 
-# You can also use cat to print out multiple file.
-# Do to this, you will call cat followed by each file separated by a space (see spaces are important!!!)
+This will print out the list of animal all of the animal noises followed by your `Hello_world.txt` file.
 
-cat animal_noises.txt Hello_world.txt
-
-# This will print out the list of animal all of the animal noises followed by your Hello_world.txt file.
-
+```
 Cow    Moo
 Pig    Oink
 Duck   Quack
@@ -246,33 +216,27 @@ Goose	Honk
 Cricket	Chirp
 Lion	Roar
 Hello world
+```
 
-###### head ######
+## head 
 
-# Some files may be quite large and you are just interesting in seeing the first few lines.
-# You use this if the top line of the file is a header and tells you what each column stands for or maybe you know you are looking for something that is at the top of the file.
-# Either way, you might be interesting in only printing the top few lines rather than the whole file.
-# This is where the head command is useful.
-# You can call head then the file name (or multiple file names separated by a space like cat) and it will show you the first 10 lines of the file (or first 10 lines of each file).
+Some files may be quite large and you are just interesting in seeing the first few lines. You use this if the top line of the file is a header and tells you what each column stands for or maybe you know you are looking for something that is at the top of the file. Either way, you might be interesting in only printing the top few lines rather than the whole file. This is where the `head` command is useful. You can call `head` then the file name (or multiple file names separated by a space like `cat`) and it will show you the first 10 lines of the file (or first 10 lines of each file).
 
-head animal_noises.txt
+`head animal_noises.txt`
 
-# This returns the first 10 lines of the animal noises file that I compiled.
+This returns the first 10 lines of the animal noises file that I compiled.
 
-# However, sometimes you are not interested in the first 10 lines and you want the first line, first 5 lines or the first 14 lines.
-# This is where the -n option comes in.
-# The -n option allows you to specify the number of lines you'd like in your head command and -n 10 is the default.
-# When printing the first line, first 5 lines of first 14 lines, you would use head -n N then your file, where N is the number of desired lines.
+However, sometimes you are not interested in the first 10 lines and you want the first line, first 5 lines or the first 14 lines. This is where the `-n` option comes in. The `-n` option allows you to specify the number of lines you'd like in your `head` command and `-n 10` is the default. When printing the first line, first 5 lines of first 14 lines, you would use `head -n N` then your file, where N is the number of desired lines.
 
-head -n 1 animal_noises.txt
+`head -n 1 animal_noises.txt`
 
-head -n 5 animal_noises.txt
+`head -n 5 animal_noises.txt`
 
-head -n 14 animal_noises.txt
+`head -n 14 animal_noises.txt`
 
-# Note, if a file is shorter than the number of desired lines in the head, then it will simply stop at the end of the file.
+Note, if a file is shorter than the number of desired lines in the head, then it will simply stop at the end of the file.
 
-######## tail ######
+## tail
 
 # You may be interested to see only the end of the file instead of the whole file.
 # This is where you will use the tail command.
