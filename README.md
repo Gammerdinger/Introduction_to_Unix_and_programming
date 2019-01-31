@@ -80,38 +80,27 @@ This uses the echo command that we will talk about next class and a special vari
 Relative paths are often quite useful and are much quicker to use than absolute paths since they are shorter. Personally, I use relative paths when navigating around the UNIX hierarchy. However, If I am providing paths of files to run a software package, I will often use the absolute path as I want to specify its location and not run into the aforementioned error after waiting for time on the computer cluster for 3 days. Yes, it has happened to me. No, it is not fun. Yes, it took several times to learn this lesson. Careful programming can often alleviate this concern, but I use it as a best practice as it assure me that silly errors will be minimized. 
 
 
-####### Spaces ######
+## Spaces
 
-# Now is a good time to pause and talk about spaces.
-# Spaces, unless properly handled with a preceding back slash (\) (which is called an escape), often signify separations
-# You will often see people, including myself, substitute spaces with underscores (_) in directory names and file names.
-# This is certainly a best practice because some things handle spaces in strange and unexpected ways and the easiest way to avoid this is just to use underscores
-# Less commonly, people sometimes use periods or dashes instead spaces, but my perception is that most people use underscores.
-# Let's go back to my first example and replace underscores with spaces and try to understand how the the computer would understand the command
+Now is a good time to pause and talk about spaces. Spaces, unless properly handled with a preceding back slash `\` (which is called an escape), often signify separations. You will often see people, including myself, substitute spaces with underscores `_` in directory names and file names. This is certainly a best practice because some things handle spaces in strange and unexpected ways and the easiest way to avoid this is just to use underscores. Less commonly, people sometimes use periods or dashes instead spaces, but my perception is that most people use underscores. Let's go back to my first example and replace underscores with spaces and try to understand how the the computer would understand the command
 
-ls /Users/Will/Photos/Summer/beach picture.jpg
+`ls /Users/Will/Photos/Summer/beach picture.jpg`
 
-# In this case the computer would to run ls on two things. First, it would try to run "ls /Users/Will/Photos/Summer/beach", then on something in my current directory called "picture.jpg"
-# Thus you can see that spaces are problematic
-# You could get around this doing something like:
+In this case the computer would to run ls on two things. First, it would try to run `ls /Users/Will/Photos/Summer/beach`, then on something in my current directory called `picture.jpg`. Thus you can see that spaces are problematic. You could get around this doing something like:
 
-ls /Users/Will/Photos/Summer/beach\ picture.jpg
+`ls /Users/Will/Photos/Summer/beach\ picture.jpg`
 
-# But this is generally not advisable for the aforementioned reasons
+But this is generally not advisable for the aforementioned reasons
 
-####### Options ######
+## Options
 
-# Well, I want to do something like ls (or many other commands), but I want it in a slightly different flavor
-# No fear, options are here to help you and they are plentiful!!!
-# There can be dozens of options for a given command and so there is no need to try to memorize them all, but throughout this course I will try to show you ones that I like and how to find out more.
-# Options can be added to a command by giving them a space followed by a dash and a corresponding letter
-# For example, my earlier ls /home/thin/ modified with the -l option:
+Well, I want to do something like ls (or many other commands), but I want it in a slightly different flavor. No fear, options are here to help you and they are plentiful!!! There can be dozens of options for a given command and so there is no need to try to memorize them all, but throughout this course I will try to show you ones that I like and how to find out more. Options can be added to a command by giving them a space followed by a dash and a corresponding letter. For example, my earlier ls `/home/thin/` modified with the `-l` option:
 
-ls -l /home/thin
+`ls -l /home/thin`
 
 Now returns:
 
-total 36K
+`total 36K
 drwxr-xr-x 2 thin thin 4.0K Dec  7  2017 Desktop
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Documents
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Downloads
@@ -120,7 +109,7 @@ drwxr-xr-x 3 thin thin 4.0K Jul 28  2017 Pictures
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Public
 drwxr-xr-x 2 root root 4.0K Dec  7  2017 scripts
 drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Templates
-drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Videos
+drwxr-xr-x 2 thin thin 4.0K Jul 28  2017 Videos`
 
 # The -l option for ls returns what is called the long list format.
 # The first column tell you the permissions for the file or directory (who can do what to the directory or file).
