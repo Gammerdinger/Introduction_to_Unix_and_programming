@@ -328,125 +328,87 @@ Or
 
 `cp ../Documents/animal_noises.txt .`
 
-########### mv ##########
+## mv
 
-# Now that you know how to copy something, you may want to know how to instead just move it or rename it
-# This is the function of the mv command
-# Many of the conventions following paths that I outlined in the cp command can be applied to the mv command, so I will not go as in depth with respect to that
-# If you want to rename a file from a directory that you are in, you would call mv followed by the current name of the file followed by the new name of the file, like:
+Now that you know how to copy something, you may want to know how to instead just move it or rename it. This is the function of the `mv` command. Many of the conventions following paths that I outlined in the `cp` command can be applied to the `mv` command, so I will not go as in depth with respect to that. If you want to rename a file from a directory that you are in, you would call `mv` followed by the current name of the file followed by the new name of the file, like:
 
-mv animal_noises.txt noises_from_animals.txt
+`mv animal_noises.txt noises_from_animals.txt`
 
-# You can also move a file or directory using this command by calling the mv command followed by the current location of the file or directory and then the new location, like:
+You can also move a file or directory using this command by calling the `mv` command followed by the current location of the file or directory and then the new location, like:
 
-mv animal_noises.txt ../Music/animal_noises.txt
+`mv animal_noises.txt ../Music/animal_noises.txt`
 
-# Note, that you you dont need to use a -R or -r option when using mv to move directories
+Note, that you you dont need to use a `-R` or `-r` option when using `mv` to move directories
 
-######## mkdir ##########
+## mkdir
 
-# If you would like to make a new directory, you can use the mkdir command
-# If you are in the directory /Users/Will/Documents/ and you wanted to make a new directory called Projects within this directory, then you would call the mkdir command followed by Projects, like:
+If you would like to make a new directory, you can use the `mkdir` command. If you are in the directory `/Users/Will/Documents/` and you wanted to make a new directory called `Projects` within this directory, then you would call the `mkdir` command followed by `Projects`, like:
 
-mkdir Projects
+`mkdir Projects`
 
-# Of course you could do this will an absolute path as well:
+Of course you could do this will an absolute path as well:
 
-mkdir /Users/Will/Documents/Projects
+`mkdir /Users/Will/Documents/Projects`
 
-# If you wanted to make several directories at the same time you just need to separate them by space following the mkdir command, like:
+If you wanted to make several directories at the same time you just need to separate them by space following the `mkdir` command, like:
 
-mkdir Directory_1 Directory_2
+`mkdir Directory_1 Directory_2`
 
-####### rm ##########
+## rm
 
-# Now you are likely making a mess in your workspace, so you are going to want a way to remove files and directories (we will talk about this in the next section).
-# The rm command ReMoves files and directories
-# Let me briefly pause and emphasize that rm PERMANENTLY removes things.
-# There is NO way to recover accidentally deleted items.
-# Please use the command with some caution.
-# To remove a file, call the rm command followed by the name of the file you would like to remove.
-# If you would like to remove the duplicate, animal_noises_2.txt, that we made earlier, you can use:
+Now you are likely making a mess in your workspace, so you are going to want a way to remove files and directories (we will talk about this in the next section). The `rm` command ReMoves files and directories. Let me briefly pause and emphasize that `rm` PERMANENTLY removes things. There is **NO** way to recover accidentally deleted items. Please use the command with some caution. To remove a file, call the `rm` command followed by the name of the file you would like to remove. If you would like to remove the duplicate, `animal_noises_2.txt`, that we made earlier, you can use:
 
-rm /Users/Will/Documents/animal_noises_2.txt
+`rm /Users/Will/Documents/animal_noises_2.txt`
 
-# You can use absolute or relative paths with this command, I am just showing an absolute path here
-# If you would like the computer to confirm with you that you mean to remove a file you can use the -i option, like:
+You can use absolute or relative paths with this command, I am just showing an absolute path here.  If you would like the computer to confirm with you that you mean to remove a file you can use the `-i` option, like:
 
-rm -i /Users/Will/Documents/animal_noises_2.txt
+`rm -i /Users/Will/Documents/animal_noises_2.txt`
 
-# Depending on the computer or computer cluster you are working on the -i option MAY be the default.
-# If you are on a system where the default is -i and this annoys you, you can use the -f option to Force remove a file
-# Just a note, the -f option can really be devastating if you are not careful with it, particularly if you combined with the -r option that we will talk about in the next section.
-# I have twice lost a month's worth of work using -rf when I shouldn't have, so BE CAREFUL using the -f option in general, but particularly with the -r option.
-# Once again, there is no undoing mistakes with rm unless you are on a system that backs things up.
+Depending on the computer or computer cluster you are working on the `-i` option **MAY** be the default. If you are on a system where the default is `-i` and this annoys you, you can use the `-f` option to Force remove a file Just a note, the `-f` option can really be devastating if you are not careful with it, particularly if you combined with the `-r` option that we will talk about in the next section. I have twice lost a month's worth of work using `-rf` when I shouldn't have, so ***BE CAREFUL*** using the `-f` option in general, but particularly with the `-r` option. Once again, there is no undoing mistakes with `rm` unless you are on a system that backs things up.
 
-# Lastly, you can remove multiple files, but separating them by a space, like:
+Lastly, you can remove multiple files, but separating them by a space, like:
 
-rm file_1 file_2
+`rm file_1 file_2`
 
-######## rmdir ########
+## rmdir
 
-# Now that you know how to make directories, you may want to know how to remove directories.
-# There are two ways to accomplish this:
+Now that you know how to make directories, you may want to know how to remove directories. There are two ways to accomplish this:
 
-# 1) Using the rmdir command to ReMove DIRectories
-# The rmdir command can ony remove empty directories.
-# Thus, if you want to remove a directory then you must first use rm to delete the contents of the directory
-# Once a directory is empty, you can remove the directory (called empty_directory_that_I_want_to_delete in this case) by calling the rmdir command followed by the directory name:
+### 1) Using the `rmdir` command to ReMove DIRectories
 
-rmdir empty_directory_that_I_want_to_delete
+The rmdir command can ony remove empty directories. Thus, if you want to remove a directory with `rmdir` then you must first use `rm` to delete the contents of the directory. Once a directory is empty, you can remove the directory (called `empty_directory_that_I_want_to_delete` in this case) by calling the `rmdir` command followed by the directory name:
 
-# You can also remove multiple empty directories by separating them with a space
+`rmdir empty_directory_that_I_want_to_delete`
 
-rmdir directory_1 directory_2
+You can also remove multiple empty directories by separating them with a space, like:
 
-# I would STRONGLY recommend using this method for while you continue to learn your way around the command line.
-# I am going to show you a different way to remove directories, because I believe you should know of its existence and also give you abundant caution for using it.
+`rmdir directory_1 directory_2`
 
-# 2) Using rm -r (and likely also the derivative the you'll use rm -rf) to recursively remove a directory and the files contained within it. 
-# Once again, please proceed with EXTREME caution.
-# This method can cause enormous irreversible damage quickly.
-# Really, BE CAREFUL.
-# A poorly placed space can delete EVERYTHING off of your computer.
-# I'm not kidding, see below.
-# That being said doing mass irreversible damage with this command is almost a rite of passage for people who use the Unix command line often, so try not to beat yourself up when (not if) it happens.
-# If you do misuse it, stop what you are doing, immediately assess the damage done and develop a plan to recover/redo what has been lost.
-# If you somehow start this accidentally you can press Control + C to cancel it, but what has been deleted will remain deleted and it will only stop additional stuff from being deleted.
-# Just a sidenote, Contrl + C will also stop all other command-line commands.
+I would ***STRONGLY*** recommend using this method for while you continue to learn your way around the command line. I am going to show you a different way to remove directories, because I believe you should know of its existence and also give you abundant caution for using it.
 
-# Also, I may have talked about this is class but the # in these Lecture notes are called notes and the Unix command line almost always ignores them (with the exception of the shebang line).
-# I usually do not put them in front of commands , but due to the extreme caution I would like to proceed with, I am going to place all rm -r and rm -rf notes inside of # just to ensure we do not accidentally trigger them.
-# Of course don't use the # signs when running the actually command.
+### 2) Using rm -r (and likely also the derivative the you'll use rm -rf) to recursively remove a directory and the files contained within it.
 
-# Okay, so now I feel like I have given you the appropriate caution with regards to this command.
-# If you have a directory that has many files and directories in it, you may want to consider using rm -r (or more likely rm -rf)
-# This command will delete a directory and all of the files within that directory.
-# The command is rm -r followed by the directory (or directories is separated by a space), like:
+Once again, please proceed with ***EXTREME*** caution. This method can cause enormous irreversible damage quickly. Really, ***BE CAREFUL***. A poorly placed space can delete **EVERYTHING** off of your computer. I'm not kidding, see below for an example. That being said doing mass irreversible damage with this command is almost a rite of passage for people who use the Unix command line often, so try not to beat yourself up when (not if) it happens. If you do misuse it, stop what you are doing, immediately assess the damage done and develop a plan to recover/redo what has been lost. If you somehow start this accidentally you can press `Control + C` to cancel it, but what has been deleted will remain deleted and it will only stop additional stuff from being deleted. Just a sidenote, `Control + C` will also stop all other command-line commands.
 
-# rm -r directory_to_delete
+Okay, so now I feel like I have given you the appropriate caution with regards to this command. If you have a directory that has many files and directories in it, you may want to consider using `rm -r` (or more likely `rm -rf`). This command will delete a directory and all of the files within that directory. The command is `rm -r` followed by the directory (or directories is separated by a space), like:
 
-# I think many systems will treat this command with the -i option, which will ask you which directories you want to descend into and confirm that you want to remove each file individually
-# However, I cannot promise that all systems will have the -i option as the default.
+`rm -r directory_to_delete`
 
-# If you are using rm -r, it is likely because you have a large number of files to delete and thus confirming the deletion of each individual file would be quite tedious.
-# As a result,  most people pair rm -r with the -f option and use rm -rf followed by the directory name, like:
+I think many systems will treat this command with the `-i` option, which will ask you which directories you want to descend into and confirm that you want to remove each file individually. However, I cannot promise that all systems will have the `-i` option as the default.
 
-# rm -rf directory_to_delete
+If you are using `rm -r`, it is likely because you have a large number of files to delete and thus confirming the deletion of each individual file would be quite tedious. As a result,  most people pair `rm -r` with the `-f` option and use `rm -rf` followed by the directory name, like:
 
-# Just to highlight how this could go catastrophically wrong with just one keystroke, imagine you wanted to delete the directory /Users/Will/Music/iTunes_library/Justin_Bieber/ from your computer using:
+`rm -rf directory_to_delete`
 
-# rm -rf /Users/Will/Music/iTunes_library/Justin_Bieber/
+Just to highlight how this could go catastrophically wrong with just one keystroke, imagine you wanted to delete the directory `/Users/Will/Music/iTunes_library/Justin_Bieber/` from your computer using:
 
-# This would work without a problem
-# However this would be catastrophic:
+`rm -rf /Users/Will/Music/iTunes_library/Justin_Bieber/`
 
-# rm -rf /Users/Will/Music/iTunes_library/Justin_Bieber /
+This would work without a problem. However, this next command would be catastrophic:
 
-# That extra space would mean you now have two directories you want to recursively remove without being prompted for a check
-# The first would be just the Justin_Bieber directory like you wanted
-# The second would be the root, or in other words EVERYTHING on your computer
-# I hope this example has taught you two things, use underscores instead of spaces and really pause to think before you run rm -rf
+`rm -rf /Users/Will/Music/iTunes_library/Justin_Bieber /`
+
+That extra space would mean you now have two directories you want to recursively remove without being prompted for a check. The first would be just the `Justin_Bieber` directory like you wanted. The second would be the root, or in other words ***EVERYTHING*** on your computer. I hope this example has taught you two things, use underscores instead of spaces and really pause to think before you run `rm -rf`.
 
 
 # Day 2: Odds and Ends along with File Maniupulation and Regular Expressions
