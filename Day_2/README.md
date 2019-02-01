@@ -289,55 +289,44 @@ If instead you don't want to write a new file, but rather append something to th
 
 `grep 'pattern_2' grep_hits.txt >> appended_grep_hits.txt`
 
-######### sort ########
+## sort
 
-# In order to use certain software packages or commands, such as uniq, files need to be sorted
-# This can be accomplished with the sort command
-# Generally speaking, it sorts things alphetically, but there are a few quirks you should be aware of.
-# The general syntax is calling the sort command followed by the file that you wish to sort like:
+In order to use certain software packages or commands, such as `uniq`, files need to be sorted. This can be accomplished with the `sort` command. It sorts things according to the ASCII alphabet, so there are a few quirks you should be aware of since the ASCII alphabet is not equivalent to the normal Englsih alphabet. The general syntax is calling the `sort` command followed by the file that you wish to sort like:
 
-sort file.txt
+`sort file.txt`
 
-# The -r option in sort does the sort in reverse alphabetical order
+The `-r` option in sort does the sort in the reverse order.
 
-sort -r file.txt
+`sort -r file.txt`
 
-# If you want to sort numbers then you need to use the -n option
-# If you dont, it will sort the output as 1, 10, 11, 100, 2, 20, 21, 22, 3 ...
+If you want to sort numbers then you need to use the `-n` option like:
 
-sort -n file.txt
+`sort -n file.txt`
 
-# If you have a mix of numbers and letters in a string, you probably want to do a "natural sort" which is the -V option
-# If you had say scaffold1, scaffold2 and scaffold10 in a file, then sort would order them like scaffold1, scaffold10 and scaffold2, but a natural sort would get you scaffold1, scaffold2 and scaffold10
-# The syntax is:
+If you dont use the `-n` option, it will sort the output as 1, 10, 11, 100, 2, 20, 21, 22, 3 ...
 
-sort -V file.txt
+If you have a mix of numbers and letters in a string, you probably want to do a *natural sort* which is the `-V` option. If you had say, "scaffold1", "scaffold2" and "scaffold10" in a file that you were sorting, then `sort` would order them like scaffold1, scaffold10 and scaffold2, but a natural sort would get you scaffold1, scaffold2 and scaffold10. The syntax for a natural sort is:
 
-# Also, you might want to sort a file by a certain column
-# The -k option allows you to pick the column to wish to sort by and can be used like:
+`sort -V file.txt`
 
-sort -k2 file.txt
+Also, you might want to use `sort` on a certain column in a file. The `-k` option allows you to pick the column to wish to use  `sort` on and can be used like:
 
-# If two items are the same in column 2 it goes onto column 3 to sort them, so on and so forth unto the end of the line or they are resolved
-# However, you can set the limits of this by adding a comma and limit the column
-# This is needed if you want to sort by different columns or sorting regimes
-# For example if you want to sort the second column of a file alphabetically and the third column reverse numerically you would need to use:
+`sort -k2 file.txt`
 
-sort -k2,2 -nrk3,3 file.txt
+In this example, if two items are the same in column 2, then `sort` uses column 3 to resolve their order, so on and so forth unto the end of the line or they are resolved. However, you can set the limits of this by adding `,` and column number you want to limit the `sort` to. This is needed if you want to use `sort` on different columns with different sorting regimes. For example, if you wanted to use the default `sort` on the second column of a file and on the third column you wanted to use a reverse numerical `sort`, then you would need to use:
 
-########## uniq #########
+`sort -k2,2 -k3,3nr file.txt`
 
-# Lastly, you might want to only want the unique entries for a file
-# This is where the uniq command comes in
-# However, for uniq to work, the file needs to be sorted previously, so we will do this with a pipe like:
+## uniq
 
-sort file.txt | uniq
+Lastly, you might want to only want the unique entries for a file. This is where the `uniq` command comes in. However, for `uniq` to work, the file needs to be previously sorted, so we will do this with a pipe like:
 
-# This will return all of our unique entries in our file
+`sort file.txt | uniq`
 
-# The -c option is nice because it tells you how many counts occured for each entry
-# The syntax would looke like:
+This will return all of our unique entries in our file.
 
-sort file.txt | uniq -c
+The `-c` option is nice because it tells you how many counts occured for each entry. The syntax would looke like:
 
-# The output has the number of counts in the file for each unique entry in the first column and what the unique entry is in the second column
+`sort file.txt | uniq -c`
+
+The output has the number of counts in the file for each unique entry in the first column and what the unique entry is in the second column.
