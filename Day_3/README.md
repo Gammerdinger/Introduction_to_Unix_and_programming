@@ -145,4 +145,24 @@ done
 
 Here, we have simply put one for loop inside the another loop, so for each value of `i` between 1 and 5, we will loop though every value of `j` between 1 and 4.
 
+## Conditional statements
 
+Perhaps you would be interested in something occcurring `if` a condition is met. This is how conditional statements operate and an example nested within a loop is below:
+
+```
+for i in {1..5}; do
+    echo $i
+    if \[ $i -lt 3\]; then
+       echo "$i is less than 3"
+    fi
+done
+```
+
+## until loops
+
+There are several different varieties of loops besides `for` loops. One type of loop called an `until` loop and this loops runs `until` some condition is met. An example of an `until` loop is:
+
+```
+until 
+
+```
