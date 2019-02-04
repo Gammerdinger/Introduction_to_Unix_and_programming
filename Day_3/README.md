@@ -112,11 +112,11 @@ Outside of the Shebang line, no other lines that start with `#` will be run. For
 
 You may be interesting in doing a loop. Loops let you iterate an action multiple times. Let's play like you want to count to 10 with a variable. You could use a `for` loop to achieve this like:
 
-``
+```
 for i in 1 2 3 4 5; do
   echo $i 
 done
-``
+```
 
 In this `for` loop the `for i in 1 2 3 4 5` section sets `i` to each of the values 1, 2, 3, 4, and 5. Once the value of `i` is set to a given number, it will then do the following actions. Sidenote: I am using the variable `i` here. Using `i` is a very common notion for what is called a "counter" variable, or a variable you use to count something. If you have multiple "counter" variables, traditionally, `j` is the next one, followed by `k`, so on and so forth, but you could call them anything you want like `counter_variable_1` and it would still work. Now, that you have `i` set for a value you will `echo $i` which will echo the value of `$i`. Lastly, one the loop is done for a value, it will run into `done`, which tells the loops to go onto the next number in the sequence.
 
