@@ -84,3 +84,16 @@ If you wanted to print the whole line with your new column, you can simply just 
 
 Remember that `$0` represents the whole line.
 
+Two interesting special variables in `awk` are the `NF` and `NR` variables which stand for number of fields (or columns) and number of records, respecively. `NF` is not usually the most useful, because many files have the same number of columns in each row, but if you wanted to see how many columns are in each row you could print the `NF` option after the each row like:
+
+`awk '{print $0, $NF}' file.txt`
+
+A really important and useful special variable in `awk` is `NR`. This will count in an ascending order the number of rows (or records) in the file. You can see this by using:
+
+`awk '{print $0, $NR}' file.txt`
+
+On the outset, `NR` might not come across as super useful, but it is excellent once you need to do math like finding the average of a column. 
+
+`awk '{sum = sum + $1} END {print sum / NR}' file.txt`
+
+The syntax here is broken into a few parts. First, `{sum = sum + $1}` adds the value of column 1 to 
