@@ -74,7 +74,7 @@ It would return:
 
 `1  2 15 hello_world.txt`
 
-This tells us that there is one line, two words and 15 bytes. I never use wc without options and I think the overwhlemingly most useful option for my research with wc is the `-l` option which will just return the number of lines in the file. It can be used like:
+This tells us that there is one line, two words and 15 bytes. I never use wc without options and I think the overwhlemingly most useful option for my research with `wc` is the `-l` option which will just return the number of lines in the file. It can be used like:
 
 `wc -l hello_world.txt`
 
