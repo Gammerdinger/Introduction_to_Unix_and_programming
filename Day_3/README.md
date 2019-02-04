@@ -152,7 +152,7 @@ Perhaps you would be interested in something occcurring `if` a condition is met.
 ```
 for i in {1..5}; do
     echo $i
-    if \[ $i -lt 3\]; then
+    if [ $i -lt 3]; then
        echo "$i is less than 3"
     fi
 done
