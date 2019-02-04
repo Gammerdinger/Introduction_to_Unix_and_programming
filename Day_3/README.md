@@ -143,6 +143,6 @@ for i in {1..5}; do
 done
 ```
 
-Here, we have simply put one for loop inside the other, so for each value of `i` we will loop though every value of `j` between 1 and 4.
+Here, we have simply put one for loop inside the another loop, so for each value of `i` between 1 and 5, we will loop though every value of `j` between 1 and 4.
 
 
