@@ -145,24 +145,114 @@ done
 
 Here, we have simply put one for loop inside the another loop, so for each value of `i` between 1 and 5, we will loop though every value of `j` between 1 and 4.
 
-## Conditional statements
+## Conditional statements Part 1
 
 Perhaps you would be interested in something occcurring `if` a condition is met. This is how conditional statements operate and an example nested within a loop is below:
 
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -lt 3]; then
-       echo "$i is less than 3"
+    if [ $i -lt 4 ]; then
+      echo "$i is less than 4"
     fi
 done
 ```
+
+This example is similar to the `for` loops above except `if` the "counter" variable is less than `4`, then I want it to also `echo "$i is less than 4"`. `-lt` stnads for less then. Other conditions are `-gt` for greater than, `-eq` for equal to, `-le` for less than or equal to and `-ge` for greater than or equal to. Note, once a full conditional statement is given you need to write `fi` to mark the end.
+
+We can also ask the if statement to have multiple conditions that it must meet like
+
+```
+for i in {1..5}; do
+    echo $i
+    if [ $i -ge 2 -a $i -lt 4  ]; then
+      echo "$i is greater than or equal to 2 and less than 4"
+    fi
+done
+```
+
+Here we use the `-a` to signify "and", so both conditions must be meet. 
+
+You could also achieve this by nesting `if` statements like:
+
+```
+for i in {1..5}; do
+    echo $i
+    if [ $i -ge 2 ]; then
+      if [ $i -lt 4 ]; then
+        echo "$i is greater than or equal to 2 and less than 4"
+      fi  
+    fi
+done
+```
+
+This and th previous statemet are equivalent, but the second statement give you a little more flexiiblity if you wanted to `echo` one output everytime it is greater than or equal to `2` and another output when it is greater than or equal to `2` and less than `4`.
+
+You can use `-o` to signify "or", so only one of the conditions must be met like:
+
+```
+for i in {1..5}; do
+    echo $i
+    if [ $i -le 2 -o $i -gt 4  ]; then
+      echo "$i is either less than or equal to 2 or greater than 4"
+    fi
+done
+```
+
+You can also use `else` as part of your `if` statement and it is used whenever the condition in the `if` statement fails like:
+
+```
+for i in {1..5}; do
+    echo $i
+    if [ $i -lt 4 ]; then
+      echo "$i is less than 4"
+    else
+      echo "$i is greater than or equal to 4"
+    fi
+done
+```
+
+In this example, `if` the "counter" variable is less than 4, then it will `echo "$i is less than 4"`, otherwise it will `echo "$i is greater than or equal to 4"`.
+
+You can also add secondary conditions called `elif`, short for ***el***se ***if***, for when the first `if` condition fails, but before it gets wrapped up in `else`. An example of this would be like:
+
+```
+for i in {1..5}; do
+    echo $i
+    if [ $i -lt 3 ]; then
+      echo "$i is less than 3"
+    elif [ $i -eq 4 ]; then
+      echo "$i is equal to 4"
+    else
+      echo "$i is not less than 3 or equal to 4"
+    fi
+done
+```
+
+For the most part, `elif` is functionally the same as having an `if` inside of `else`.  
 
 ## until loops
 
 There are several different varieties of loops besides `for` loops. One type of loop called an `until` loop and this loops runs `until` some condition is met. An example of an `until` loop is:
 
 ```
-until 
-
+i=10
+until [ $i -le 5 ]; do
+    echo "$i is not less than of equal to 5"
+    i=$(echo "$i - 1" | bc -l )
+done
 ```
+
+In this case the counter variable, `i`, is initially set to 10 and then the loop runs `until` the "counter" variable is less than or equal to `5`. While, that is true we want it to `echo "$i is not less than of equal to 5"` and then tick the "counter" variable down one by doing `i=$(echo "$i - 1" | bc -l )`.
+
+It should be noted that using `i=$(echo "$i - 1" | bc -l )` is this case is fine, but it is a bit overkill. While, it is true that base does poorly with math, it can add and substract integers and there the following are acceptable substitutes for `i=$(echo "$i - 1" | bc -l )`:
+
+`i=$(($i-1))`
+
+or
+
+`let i-=1`
+
+or
+
+`let i--`
