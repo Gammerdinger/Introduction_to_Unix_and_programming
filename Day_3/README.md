@@ -114,7 +114,9 @@ You may be interesting in doing a loop. Loops let you iterate an action multiple
 
 ``
 for i in 1 2 3 4 5; do
+
   echo $i
+  
 done
 ``
 
@@ -124,7 +126,9 @@ Now, you might think this is nice, but you don't want to type out every number t
 
 ``
 for i in {1..5}; do
+
   echo $i
+  
 done
 ``
 
@@ -138,8 +142,11 @@ We can also combine loops and make loops inside of loops like:
 
 ``
 for i in {1..5}; do
+
   for j in {1..4}; do
+  
     echo -e "$i\t$j"
+    
 done
 ``
 
