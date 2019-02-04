@@ -88,7 +88,7 @@ This should return two
 
 The `-m` option will return the number of characters
 
-wc -m hello_world.txt
+`wc -m hello_world.txt`
 
 This should be 15. You might count the character up and say there are only 14 characters in the file. However, the difference is that the new line character (while not seen) also counts as a character thus brings the total to 15.
 
