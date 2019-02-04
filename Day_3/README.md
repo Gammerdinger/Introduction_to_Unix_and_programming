@@ -100,10 +100,49 @@ The syntax here is broken into a few parts. First, `{sum = sum + $1}` adds the v
 
 ## Bash Scripts
 
-One useful thing you will begin doing to writing your commands in a file, called a script, so that you will have a record of your work. `bash` scripts traditionally end with the extension `.sh`. The first line of any `bash` script should be what is called the Shebang line. This tells the computer where to look for the language that your script is written in. The shebang line for computers at IST is 
+One useful thing you will begin doing to writing your commands in a file, called a script, so that you will have a record of your work. You can write these in nano and `bash` scripts traditionally end with the extension `.sh`. The first line of any `bash` script should be what is called the Shebang line. This tells the computer where to look for the language that your script is written in. The shebang line for computers at IST is 
 
 `#!/bin/bash`
 
 Outside of the Shebang line, no other lines that start with `#` will be run. For this reason, `#` oftentimes will refer to notes or comments. This is a place with the author of the script will say what a line or block of code is doing, so that others who try to read their code can see how it works.
+
+`bash` scripts are capable of using all of the commands you have previously learned. There are some things we will go over that you can do on the command line or in `bash` scripts, but it is often easier, cleaner and repeateable to do them in `bash` scripts.
+
+## for loops
+
+You may be interesting in doing a loop. Loops let you iterate an action multiple times. Let's play like you want to count to 10 with a variable. You could use a `for` loop to achieve this like:
+
+``
+for i in 1 2 3 4 5; do
+  echo $i
+done
+``
+
+In this `for` loop the `for i in 1 2 3 4 5` section sets `i` to each of the values 1, 2, 3, 4, and 5. Once the value of `i` is set to a given number, it will then do the following actions. Sidenote: I am using the variable `i` here. Using `i` is a very common notion for what is called a "counter" variable, or a variable you use to count something. If you have multiple "counter" variables, traditionally, `j` is the next one, followed by `k`, so on and so forth, but you could call them anything you want like `counter_variable_1` and it would still work. Now, that you have `i` set for a value you will `echo $i` which will echo the value of `$i`. Lastly, one the loop is done for a value, it will run into `done`, which tells the loops to go onto the next number in the sequence.
+
+Now, you might think this is nice, but you don't want to type out every number that you want to iterate over. In that case, you can alter the loop to do look like this:
+
+``
+for i in {1..5}; do
+  echo $i
+done
+``
+
+Here we have replaced the `1 2 3 4 5` with `{1..5}` and the outcome is the same.
+
+Also, a small note here, you can put this all on the same line with a semi-colon separating each new line (except following `do`), if you want, but it can be tough to read. The previous for loop would look like:
+
+`for i in {1..5}; do echo $i; done`
+
+We can also combine loops and make loops inside of loops like:
+
+``
+for i in {1..5}; do
+  for j in {1..4}; do
+    echo -e "$i\t$j"
+done
+``
+
+Here, we have simply put one for loop inside the other, so for each value of `i` we will loop though every value of `j` between 1 and 4.
 
 
