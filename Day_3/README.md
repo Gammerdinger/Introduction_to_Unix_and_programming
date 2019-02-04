@@ -96,4 +96,14 @@ On the outset, `NR` might not come across as super useful, but it is excellent o
 
 `awk '{sum = sum + $1} END {print sum / NR}' file.txt`
 
-The syntax here is broken into a few parts. First, `{sum = sum + $1}` adds the value of column 1 to 
+The syntax here is broken into a few parts. First, `{sum = sum + $1}` adds the value of column 1 to a variable called sum and then assigns that value to the variable sum. Once it gets to the end of the file it will see `END` where it will then carry out `{print sum / NR}`. This divides the current value of sum, which is the sum of the column, by the number of rows. Thus, this will produce an average for a column.
+
+## Bash Scripts
+
+One useful thing you will begin doing to writing your commands in a file, called a script, so that you will have a record of your work. `bash` scripts traditionally end with the extension `.sh`. The first line of any `bash` script should be what is called the Shebang line. This tells the computer where to look for the language that your script is written in. The shebang line for computers at IST is 
+
+`#!/bin/bash`
+
+Outside of the Shebang line, no other lines that start with `#` will be run. For this reason, `#` oftentimes will refer to notes or comments. This is a place with the author of the script will say what a line or block of code is doing, so that others who try to read their code can see how it works.
+
+
