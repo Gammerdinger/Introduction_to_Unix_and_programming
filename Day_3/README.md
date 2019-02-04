@@ -114,9 +114,7 @@ You may be interesting in doing a loop. Loops let you iterate an action multiple
 
 ``
 for i in 1 2 3 4 5; do
-
-  echo $i
-  
+  echo $i 
 done
 ``
 
@@ -124,13 +122,11 @@ In this `for` loop the `for i in 1 2 3 4 5` section sets `i` to each of the valu
 
 Now, you might think this is nice, but you don't want to type out every number that you want to iterate over. In that case, you can alter the loop to do look like this:
 
-``
+```
 for i in {1..5}; do
-
   echo $i
-  
 done
-``
+```
 
 Here we have replaced the `1 2 3 4 5` with `{1..5}` and the outcome is the same.
 
@@ -140,15 +136,12 @@ Also, a small note here, you can put this all on the same line with a semi-colon
 
 We can also combine loops and make loops inside of loops like:
 
-``
+```
 for i in {1..5}; do
-
   for j in {1..4}; do
-  
-    echo -e "$i\t$j"
-    
+    echo -e "$i\t$j" 
 done
-``
+```
 
 Here, we have simply put one for loop inside the other, so for each value of `i` we will loop though every value of `j` between 1 and 4.
 
