@@ -1,5 +1,8 @@
 Today we are going to probe into a little more depth with a few commands and also introduce the fundamentals of programming. In this exercise, we are going to focus on programming using `bash`, which is a common shell for the Unix environment. I do hesitate to teach you all very much `bash` because it is ***VERY*** finicky when it some to proper syntax and programming languages like Perl and Python are ***MUCH*** more forgiving. However, you may want/need to use it is some cases and most programming languages are largely similiar in capabilities for beginners. That being said, moving forward after this course, I would encourage you to learn Perl or Python for most of your programming needs (probably Python is the better choice, but a dying breed of programmers including myself use Perl). However, in order to introduce Perl (or likely Python for that matter), I would need to introduce you to some idiosyncrasies of these languages.
 
+Before we get started we need to install `bc` on the computers. It is usually on most Unix systems, but for some reason it is not on these computers. In order to dowload and install this, type:
+
+`sudo apt install bc`
 
 # Variables
 
