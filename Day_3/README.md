@@ -379,18 +379,18 @@ Associative arrays are immensely useful and are composed of two parts, a key and
 
 This will initialize your associative array and `-A` denotes that it is an associative array. Next you want to add things to it like:
 
-`animal_noises_associative_array[Cow]=Moo`
+`animal_noises_associative_array["Cow"]="Moo"`
 
 In this case, `Cow` is the key and `Moo` is the value within the associative array named `animal_noises_associative_array`. You can add a few more animal noises like:
 
 ```
-animal_noises_associative_array[Pig]=Oink
-animal_noises_associative_array[Owl]=Hoot
+animal_noises_associative_array["Pig"]="Oink"
+animal_noises_associative_array["Owl"]="Hoot"
 ```
 
 Now you can call, an retrieve a value in the array using the key like:
 
-`echo ${animal_noises_associative_array[Pig]}`
+`echo ${animal_noises_associative_array["Pig"]}`
 
 And this should retrieve:
 
@@ -398,7 +398,7 @@ And this should retrieve:
 
 Also, note that you can overwrite entries since keys ***MUST*** be unique. You can do this by doing:
 
-`animal_noises_associative_array[Cow]=Moooooooo`
+`animal_noises_associative_array["Cow"]="Moooooooo"`
 
 Now, the `Cow` entry is `Moooooooo` instead of `Moo`.
 
@@ -407,12 +407,12 @@ You could also read in a file like `animal_noises.txt` and assign the animal var
 ```
 declare -A animal_noises_associative_array_2
 while read animal noise; do
-  animal_noises_associative_array_2[$animal]=$noise
+  animal_noises_associative_array_2["$animal"]="$noise"
 done < animal_noises.txt
 
-echo -e "The pig goes ${animal_noises_associative_array_2[Pig]}."
-echo -e "The chicken goes ${animal_noises_associative_array_2[Chicken]}"
-echo -e "The rooster goes ${animal_noises_associative_array_2[Rooster]}"
+echo -e "The pig goes ${animal_noises_associative_array_2["Pig"]}."
+echo -e "The chicken goes ${animal_noises_associative_array_2["Chicken"]}"
+echo -e "The rooster goes ${animal_noises_associative_array_2["Rooster"]}"
 ```
 
 ## Conclusion
