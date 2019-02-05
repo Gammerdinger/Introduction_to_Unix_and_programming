@@ -284,7 +284,7 @@ while read animal noise; do
   echo "The $animal goes $noise."
 done < animal_noises.txt
 ```
-We know that column 1 of `animal_noises.txt` are the animals and column 2 are the noises. The `while read animal noise; do` tells the computer that `while` you can still `read` the input (which comes from the end and we will talk about) assign what is in the first column to the variable `animal` and what is in the second column to the variable `noises`. Then, `echo "The $animal goes $noise."` tells the the computer to print out the variable `$animal` and the  variable `noise` from that line in a sentence. Lastly, `done < animal_noises.txt` says to do this `while` there are still lines to read from the file `animal_noises.txt` and this is where your file input is placed. It always feels weird to me that it is at the end, but this is the syntax in `bash`.
+We know that column 1 of `animal_noises.txt` are the animals and column 2 are the noises. The `while read animal noise; do` tells the computer that `while` you can still `read` the input (which comes from the end and we will talk about) assign what is in the first column to the variable `animal` and what is in the second column to the variable `noises`. If this file has more than two columns and we ran this same script, the first column would still get assigned to `animal`, but `noises` would get the rest of the line. Then, `echo "The $animal goes $noise."` tells the the computer to print out the variable `$animal` and the  variable `noise` from that line in a sentence. Lastly, `done < animal_noises.txt` says to do this `while` there are still lines to read from the file `animal_noises.txt` and this is where your file input is placed. It always feels weird to me that it is at the end, but this is the syntax in `bash`.
 
 ## Conditional Statements Part 2
 
@@ -370,4 +370,50 @@ It is important to note, that this does ***not*** use zero-based indexing.
 
 ## Associative arrays
 
+Associative arrays are immensely useful and are composed of two parts, a key and a value. Every key is unique and it has a value assigned to it. Thus, you can call a key and it will return a value. These are called hashes in `Perl` and dictionaries in `Python`.
 
+`declare -A animal_noises_associative_array`
+
+This will initialize your associative array and `-A` denotes that it is an associative array. Next you want to add things to it like:
+
+`animal_noises_associative_array[Cow]=Moo`
+
+In this case, `Cow` is the key and `Moo` is the value within the associative array named `animal_noises_associative_array`. You can add a few more animal noises like:
+
+```
+animal_noises_associative_array[Pig]=Oink
+animal_noises_associative_array[Owl]=Hoot
+```
+
+Now you can call, an retrieve a value in the array using the key like:
+
+`echo ${animal_noises_associative_array[Pig]}`
+
+And this should retrieve:
+
+`Oink`
+
+Also, note that you can overwrite entries since keys ***MUST*** be unique. You can do this by doing:
+
+`animal_noises_associative_array[Cow]=Moooooooo`
+
+Now, the `Cow` entry is `Moooooooo` instead of `Moo`.
+
+You could also read in a file like `animal_noises.txt` and assign the animal variable as the key and the noise variable as the value, then query them like:
+
+```
+declare -A animal_noises_associative_array_2
+while read animal noise; do
+  animal_noises_associative_array_2[$animal]=$noise
+done < animal_noises.txt
+
+echo -e "The pig goes ${animal_noises_associative_array_2[Pig]}."
+echo -e "The chicken goes ${animal_noises_associative_array_2[Chicken]}"
+echo -e "The rooster goes ${animal_noises_associative_array_2[Rooster]}"
+```
+
+## Conclusion
+
+At this point, you have a solid underpinning of the types the things you can do in the Unix command line and also have a flavor the the types of tools in many programming languages. There are small thing here and there that I have not mentioned, but I think I have covered the big picture. You are welcome to always use this as a resource and if you find a mistake please notify me so that I can update it. Thank you and I hope you have found this tutorial into Unix and Progamming useful.
+
+  
