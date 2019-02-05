@@ -414,6 +414,6 @@ echo -e "The rooster goes ${animal_noises_associative_array_2[Rooster]}"
 
 ## Conclusion
 
-At this point, you have a solid underpinning of the types the things you can do in the Unix command line and also have a flavor the the types of tools in many programming languages. There are small thing here and there that I have not mentioned, but I think I have covered the big picture. You are welcome to always use this as a resource and if you find a mistake please notify me so that I can update it. Thank you and I hope you have found this tutorial into Unix and Progamming useful.
+At this point, you have a solid underpinning of the types the things you can do in the Unix command line and also have a flavor the the types of tools in many programming languages. There are small thing here and there that I have not mentioned, but I think I have covered the big picture. You are welcome to always use this as a resource and if you find a mistake please notify me so that I can update it. Thank you and I hope you have found this tutorial into Unix and progamming useful.
 
   
