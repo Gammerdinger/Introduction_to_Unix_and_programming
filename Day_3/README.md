@@ -152,20 +152,24 @@ Perhaps you would be interested in something occcurring `if` a condition is met.
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -lt 4 ]; then
+    if [ "$i" -lt 4 ]; then
       echo "$i is less than 4"
     fi
 done
 ```
 
-This example is similar to the `for` loops above except `if` the "counter" variable is less than `4`, then I want it to also `echo "$i is less than 4"`. `-lt` stnads for less then. Other conditions are `-gt` for greater than, `-eq` for equal to, `-le` for less than or equal to and `-ge` for greater than or equal to. Note, once a full conditional statement is given you need to write `fi` to mark the end.
+This example is similar to the `for` loops above except `if` the "counter" variable is less than `4`, then I want it to also `echo "$i is less than 4"`. `-lt` stnads for less then. Other conditions are `-gt` for greater than, `-eq` for equal to, `-le` for less than or equal to and `-ge` for greater than or equal to. Note, once a full conditional statement is given you need to write `fi` to mark the end. 
+
+### A small sidenote, it is good to get int the habit of putting variables in double quotes when doing conditional statements in `bash`. It doesn't matter for integers, but it does for strings, which we will learn about later.
+
+### Another sidenote, `bash` is ***VERY*** finicky about how whitespace is set up in conditional statements. If we use the previous example, t is best to have a use spaces between `[` and `"$i"`, between `"$i"` and `-lt`, between `-lt` and `4` and lastly between `4` and `]`.
 
 We can also ask the if statement to have multiple conditions that it must meet like
 
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -ge 2 -a $i -lt 4  ]; then
+    if [ "$i" -ge 2 -a "$i" -lt 4  ]; then
       echo "$i is greater than or equal to 2 and less than 4"
     fi
 done
@@ -178,8 +182,8 @@ You could also achieve this by nesting `if` statements like:
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -ge 2 ]; then
-      if [ $i -lt 4 ]; then
+    if [ "$i" -ge 2 ]; then
+      if [ "$i" -lt 4 ]; then
         echo "$i is greater than or equal to 2 and less than 4"
       fi  
     fi
@@ -193,7 +197,7 @@ You can use `-o` to signify "or", so only one of the conditions must be met like
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -le 2 -o $i -gt 4  ]; then
+    if [ "$i" -le 2 -o "$i" -gt 4  ]; then
       echo "$i is either less than or equal to 2 or greater than 4"
     fi
 done
@@ -204,7 +208,7 @@ You can also use `else` as part of your `if` statement and it is used whenever t
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -lt 4 ]; then
+    if [ "$i" -lt 4 ]; then
       echo "$i is less than 4"
     else
       echo "$i is greater than or equal to 4"
@@ -219,9 +223,9 @@ You can also add secondary conditions called `elif`, short for ***el***se ***if*
 ```
 for i in {1..5}; do
     echo $i
-    if [ $i -lt 3 ]; then
+    if [ "$i" -lt 3 ]; then
       echo "$i is less than 3"
-    elif [ $i -eq 4 ]; then
+    elif [ "$i" -eq 4 ]; then
       echo "$i is equal to 4"
     else
       echo "$i is not less than 3 or equal to 4"
@@ -237,7 +241,7 @@ There are several different varieties of loops besides `for` loops. One type of 
 
 ```
 i=10
-until [ $i -le 5 ]; do
+until [ "$i" -le 5 ]; do
     echo "$i is not less than of equal to 5"
     i=$(echo "$i - 1" | bc -l )
 done
@@ -249,6 +253,8 @@ It should be noted that using `i=$(echo "$i - 1" | bc -l )` is this case is fine
 
 `i=$(($i-1))`
 
+(This is my perferred method, but all of these are synonymous)
+
 or
 
 `let i-=1`
@@ -256,3 +262,38 @@ or
 or
 
 `let i--`
+
+## while loops
+
+I think `while` loops are some of the most useful loops. The first use for `while` loops is not as useful and it is somewhat similar to `until` loops. `while` loops will continue to run `while` a statement is true. Once the statement is false, they will exit. An example is like:
+
+```
+i=0
+while [ "$i" -lt 5 ]; do
+  echo "$i is less than 5"
+  i=$(($i+1))
+done
+```
+
+However, this is not the most powerful use for `while` loops. People will often use `while` loops to read files and this will read in a file one line at a time until it hits the end of the file. An example of how to do this using our `animal_noises.txt` from Day 1 looks like:
+
+```
+while read animal noise; do
+  echo "The $animal goes $noise."
+done < animal_noises.txt
+```
+We know that column 1 of `animal_noises.txt` are the animals and column 2 are the noises. The `while read animal noise; do` tells the computer that `while` you can still `read` the input (which comes from the end and we will talk about) assign what is in the first column to the variable `animal` and what is in the second column to the variable `noises`. Then, `echo "The $animal goes $noise."` tells the the computer to print out the variable `$animal` and the  variable `noise` from that line in a sentence. Lastly, `done < animal_noises.txt` says to do this `while` there are still lines to read from the file `animal_noises.txt` and this is where your file input is placed. It always feels weird to me that it is at the end, but this is the syntax in `bash`.
+
+## Conditional Statements Part 2
+
+Now, that we know how to read a file in, you might want to know how to use conditional statements on strings instead of just numbers. The syntax is largely similar, and we will modify the last `while` loop to use a string matching conditional statement like:
+
+```
+while read animal noise; do
+  if [ "$animal" == "Cow" ]; then
+    echo "The $animal goes $noise."
+  fi
+done < animal_noises.txt
+```
+
+
