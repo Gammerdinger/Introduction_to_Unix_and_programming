@@ -160,9 +160,9 @@ done
 
 This example is similar to the `for` loops above except `if` the "counter" variable is less than `4`, then I want it to also `echo "$i is less than 4"`. `-lt` stnads for less then. Other conditions are `-gt` for greater than, `-eq` for equal to, `-le` for less than or equal to and `-ge` for greater than or equal to. Note, once a full conditional statement is given you need to write `fi` to mark the end. 
 
-### A small sidenote, it is good to get int the habit of putting variables in double quotes when doing conditional statements in `bash`. It doesn't matter for integers, but it does for strings, which we will learn about later.
+A small sidenote, it is good to get int the habit of putting variables in double quotes when doing conditional statements in `bash`. It doesn't matter for integers, but it does for strings, which we will learn about later.
 
-### Another sidenote, `bash` is ***VERY*** finicky about how whitespace is set up in conditional statements. If we use the previous example, t is best to have a use spaces between `[` and `"$i"`, between `"$i"` and `-lt`, between `-lt` and `4` and lastly between `4` and `]`.
+Another sidenote, `bash` is ***VERY*** finicky about how whitespace is set up in conditional statements. If we use the previous example, t is best to have a use spaces between `[` and `"$i"`, between `"$i"` and `-lt`, between `-lt` and `4` and lastly between `4` and `]`.
 
 We can also ask the if statement to have multiple conditions that it must meet like
 
