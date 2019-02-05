@@ -152,7 +152,7 @@ Perhaps you would be interested in something occcurring `if` a condition is met.
 ```
 for i in {1..5}; do
     echo $i
-    if [ "$i" -lt 4 ]; then
+    if [[ "$i" -lt 4 ]]; then
       echo "$i is less than 4"
     fi
 done
@@ -162,28 +162,30 @@ This example is similar to the `for` loops above except `if` the "counter" varia
 
 A small sidenote, it is good to get int the habit of putting variables in double quotes when doing conditional statements in `bash`. It doesn't matter for integers, but it does for strings, which we will learn about later.
 
-Another sidenote, `bash` is ***VERY*** finicky about how whitespace is set up in conditional statements. If we use the previous example, t is best to have a use spaces between `[` and `"$i"`, between `"$i"` and `-lt`, between `-lt` and `4` and lastly between `4` and `]`.
+Another sidenote, `bash` is ***VERY*** finicky about how whitespace is set up in conditional statements. If we use the previous example, t is best to have a use spaces between `[[` and `"$i"`, between `"$i"` and `-lt`, between `-lt` and `4` and lastly between `4` and `]]`.
+
+Last sidenote, sometimes you will see `[` and `]` instead of `[[` and `]]` and the latter is the upgraded version. It can handle things like regular expressions, so I think you always would prefer to use it.
 
 We can also ask the if statement to have multiple conditions that it must meet like
 
 ```
 for i in {1..5}; do
     echo $i
-    if [ "$i" -ge 2 -a "$i" -lt 4  ]; then
+    if [[ "$i" -ge 2 && "$i" -lt 4 ]]; then
       echo "$i is greater than or equal to 2 and less than 4"
     fi
 done
 ```
 
-Here we use the `-a` to signify "and", so both conditions must be meet. 
+Here we use the `&&` to signify "and", so both conditions must be meet. 
 
 You could also achieve this by nesting `if` statements like:
 
 ```
 for i in {1..5}; do
     echo $i
-    if [ "$i" -ge 2 ]; then
-      if [ "$i" -lt 4 ]; then
+    if [[ "$i" -ge 2 ]]; then
+      if [[ "$i" -lt 4 ]]; then
         echo "$i is greater than or equal to 2 and less than 4"
       fi  
     fi
@@ -192,12 +194,12 @@ done
 
 This and th previous statemet are equivalent, but the second statement give you a little more flexiiblity if you wanted to `echo` one output everytime it is greater than or equal to `2` and another output when it is greater than or equal to `2` and less than `4`.
 
-You can use `-o` to signify "or", so only one of the conditions must be met like:
+You can use `||` to signify "or", so only one of the conditions must be met like:
 
 ```
 for i in {1..5}; do
     echo $i
-    if [ "$i" -le 2 -o "$i" -gt 4  ]; then
+    if [[ "$i" -le 2 || "$i" -gt 4 ]]; then
       echo "$i is either less than or equal to 2 or greater than 4"
     fi
 done
@@ -208,7 +210,7 @@ You can also use `else` as part of your `if` statement and it is used whenever t
 ```
 for i in {1..5}; do
     echo $i
-    if [ "$i" -lt 4 ]; then
+    if [[ "$i" -lt 4 ]]; then
       echo "$i is less than 4"
     else
       echo "$i is greater than or equal to 4"
@@ -223,9 +225,9 @@ You can also add secondary conditions called `elif`, short for ***el***se ***if*
 ```
 for i in {1..5}; do
     echo $i
-    if [ "$i" -lt 3 ]; then
+    if [[ "$i" -lt 3 ]]; then
       echo "$i is less than 3"
-    elif [ "$i" -eq 4 ]; then
+    elif [[ "$i" -eq 4 ]]; then
       echo "$i is equal to 4"
     else
       echo "$i is not less than 3 or equal to 4"
@@ -241,7 +243,7 @@ There are several different varieties of loops besides `for` loops. One type of 
 
 ```
 i=10
-until [ "$i" -le 5 ]; do
+until [[ "$i" -le 5 ]]; do
     echo "$i is not less than of equal to 5"
     i=$(echo "$i - 1" | bc -l )
 done
@@ -255,11 +257,11 @@ It should be noted that using `i=$(echo "$i - 1" | bc -l )` is this case is fine
 
 (This is my perferred method, but all of these are synonymous)
 
-or
+Or
 
 `let i-=1`
 
-or
+Or
 
 `let i--`
 
@@ -269,7 +271,7 @@ I think `while` loops are some of the most useful loops. The first use for `whil
 
 ```
 i=0
-while [ "$i" -lt 5 ]; do
+while [[ "$i" -lt 5 ]]; do
   echo "$i is less than 5"
   i=$(($i+1))
 done
@@ -290,10 +292,82 @@ Now, that we know how to read a file in, you might want to know how to use condi
 
 ```
 while read animal noise; do
-  if [ "$animal" == "Cow" ]; then
+  if [[ "$animal" == "Cow" ]]; then
     echo "The $animal goes $noise."
   fi
 done < animal_noises.txt
 ```
+
+In this example, the variable `$animal` must ***EXACTLY*** match the complete word `Cow` since `Cow` is in double quotes. However, as I said earlier since we are using `[[` and ']]' instead of `[` and `]`, we can use regular expressions. If we want to match something using a regular expression, then you need to change `==` to `=~` and you do not put the pattern you are searching for in double quotes like:
+
+```
+while read animal noise; do
+  if [[ "$animal" =~ e$ ]]; then
+    echo "The $animal goes $noise."
+  fi
+done < animal_noises.txt
+```
+
+## Arrays
+
+Arrays are an interesting data structure that hold a given string or value in given position in the inventory of strings and values. An example of this in `bash` would look like:
+
+`declare -a animal_array=( "Cow" "Pig" "Chicken" "Dog" )`
+
+This is how you would declare an array of animals. Be careful not to put a space until after the `(`. In this array, `Cow` is in the `0` position, `Pig` in in the `1` position, `Chicken` is in the `2` position and `Dog` is in the `4` position. This is considered zero-based index since the initial position in the array starts at `0`.
+
+Now, if you want to `echo` the item in the `2` position, then you need to:
+
+`echo ${animal_array[2]}`
+
+And it should return:
+
+`Chicken`
+
+You can also use a `for` loop to loop through arrays like:
+
+```
+for animal in "${animal_array[@]}"; do 
+  echo $animal
+done
+```
+
+The `animal in "${animal_array[@]}"` just says that each element (or piece of the array) will be assigned the variable `animal` as the loop goes through it.
+
+If you want to get rid of an element in a positon of an array you need to use `unset` like:
+
+`unset animal_array[2]` 
+
+This will remove the element in the `2` position in the array.
+
+You can also overwrite elements like:
+
+`animal_array[0]=Cat`
+
+This will replace the `0` position element that was previously `Cow` with `Cat`. 
+
+## argv array
+
+While, arrays are somewhat limited in useful in `bash` there is a nice feature of them using what is called the argv array. The argv array is used to take inputs from the command line and assign them to variables within your script. Typically, when you run a `bash` script it will look like:
+
+`bash some_bash_script.sh`
+
+However, you can give bash script input using the argv array. In this case, you can feed it:
+
+`bash some_bash_script.sh element_1 element_2 element_3`
+
+Then, `some_bash_script.sh` you can assign these elements to variables like:
+
+```
+variable_1=$1
+variable_2=$2
+variable_3=$3
+```
+
+In this case, `variable_1` will now be equal to `element_1`, `variable_2` will now be equal to `element_2` and `variable_3` will now be equal to `element_3`. 
+
+It is important to note, that this does ***not*** use zero-based indexing.
+
+## Associative arrays
 
 
