@@ -38,7 +38,7 @@ This is the step size with which you would like to increase the counter variable
 
 ## Examples
 
-A C-like style for a *for* loop in *bash* would look like this:
+A C-like style *for* loop in *bash* would look like this:
 
 ```
   for (( i = 0; i <= 10; i = i + 1 )); do
@@ -53,3 +53,11 @@ Let's break down each of these components.
 -`i <= 10` This is your end condition. If counter variable `i` is less than or equal to 10, then the loop will run.
 
 -`i = i + 1` This is your increment. After each iteration of your loop, your counter variable will be increased by 1. Of course, you could set the value added to anything and you could do something like `i = i + 2` if you wanted the increment step to be two each time.
+
+### A few shortcuts
+
+Few people actually write their *bash for* loops as explicitly as I have done above. There are a few shorthands that you will often see. 
+
+#### *i++*
+
+Instead of `i = i + 1`, people will often shorten this to `i++`. It a shorthand for `i = i + 1` and does the exact same things. The only downside to this shorthand is that you have to to use increments of one, which for most people is what they want anyway. 
