@@ -40,9 +40,11 @@ This is the step size with which you would like to increase the counter variable
 
 A C-like style for a *for* loop in *bash* would look like this:
 
+``
   for (( i = 0; i <= 10; i = i + 1 )); do
     echo $i
   done
+``
 
 Let's break down each of these components.
 
