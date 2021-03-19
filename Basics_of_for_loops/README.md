@@ -170,3 +170,34 @@ for i in {1..5}; do
   done
 done
 ```
+This would produce output like:
+
+```
+1a
+1b
+1c
+2a
+2b
+2c
+3a
+3b
+3c
+4a
+4b
+4c
+5a
+5b
+5c
+```
+
+You could even add conditional statements like this one that will skip the number four:
+
+```
+for i in {1..10}; do
+  if [[ $i == 4 ]]; then
+    continue
+  else
+    echo $i
+  fi
+done
+```
