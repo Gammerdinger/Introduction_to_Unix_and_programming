@@ -60,7 +60,13 @@ Few people actually write their *bash for* loops as explicitly as I have done ab
 
 #### *i++*
 
-Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = i + 1` are equivilant terms. The only downside to this shorthand is that you *have* to to use increments of one, which for most people's purposes is what they want anyway.
+Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = i + 1` are equivilant terms. The only downside to this shorthand is that you *have* to to use increments of one, which for most people's purposes is what they want anyway. Something like this would look like:
+
+```
+  for (( i = 0; i <= 10; i++ )); do
+    echo $i
+  done
+```
 
 #### *$(seq START END)*
 
