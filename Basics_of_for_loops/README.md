@@ -45,6 +45,21 @@ A C-style *for* loop in *bash* would look like this:
     echo $i
   done
 ```
+And it should produce this output:
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
 
 Let's break down each of these components.
 
@@ -100,12 +115,12 @@ This is similar  to `$(seq START END)` but this allows you to pick your incremen
   done
 ```
 
-#### *{START..INCREMENT..END}* (if using Bash v4.0+) 
+#### *{START..END..INCREMENT}* (if using Bash v4.0+) 
 
 Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. 
 
 ```
-  for i in {0..2..10}; do
+  for i in {0..10..2}; do
     echo $i
   done
 ```
@@ -125,5 +140,33 @@ If you had multi-word elements in this list (I would try to use underscores inst
 ```
 for i in red 'dark orange' yellow 'emerald green' 'pale blue' indigo violet; do
   echo $i
+done
+```
+
+This might seem not particularly useful until you realize that you can create these lists using other commands in *bash*. For example, you may want to make a list of every file in your current directory this like:
+
+```
+for i in $(ls); do
+  echo $i
+done
+```
+
+Or equally as interesting, perhaps you wanted to do something to each of your files that had a .fastq extension. You could siply use:
+
+```
+for i in *.fastq; do
+  echo $i
+done
+```
+
+### Combinations
+
+One of the great parts of loops is that you can put them within one another or use any commands in or around them. A simple example could look like this:
+
+```
+for i in {1..5}; do
+  for j in a b c; do
+    echo $i$j
+  done
 done
 ```
