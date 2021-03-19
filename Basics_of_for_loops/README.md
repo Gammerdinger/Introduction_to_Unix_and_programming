@@ -38,7 +38,7 @@ This is the step size with which you would like to increase the counter variable
 
 ## Examples
 
-A C-like style *for* loop in *bash* would look like this:
+A C-style *for* loop in *bash* would look like this:
 
 ```
   for (( i = 0; i <= 10; i = i + 1 )); do
@@ -60,4 +60,30 @@ Few people actually write their *bash for* loops as explicitly as I have done ab
 
 #### *i++*
 
-Instead of `i = i + 1`, people will often shorten this to `i++`. It a shorthand for `i = i + 1` and does the exact same things. The only downside to this shorthand is that you have to to use increments of one, which for most people is what they want anyway. 
+Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = i + 1` are equivilant terms. The only downside to this shorthand is that you *have* to to use increments of one, which for most people's purposes is what they want anyway.
+
+#### $(seq START END) / {START..END} / $(seq START INCREMENT END) / {START..INCREMENT..END} (if using Bash v4.0+) 
+
+There are a variety of ways of setting the range with which you want your *for* loop to interate over. 
+
+-`$(seq START END)` This uses the `seq` command in *bash* to create a sequence with an increment size of one. The following *for* loop gives the same output as the previous *for* loop.
+
+```
+  for i in $(seq 0 10); do
+    echo $i
+  done
+```
+
+- `{START..END}` This can further be shortened to look like this. This form is the most common form of *for* I find people use. An Example that is equivilant to the above examples is simply:
+
+```
+  for i in {0..10}; do
+    echo $i
+  done
+```
+
+You can see that this is ***MUCH*** easier to work with than the previous C-style *for* loop. 
+
+-`$(seq START INCREMENT END)` This is similar  to `$(seq START END)` but this allows you to pick your increment step.
+
+-`{START..INCREMENT..END}` If you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. 
