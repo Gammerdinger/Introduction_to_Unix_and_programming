@@ -70,8 +70,6 @@ Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = 
 
 #### *$(seq START END)*
 
-There are a variety of ways of setting the range with which you want your *for* loop to interate over. 
-
 -`$(seq START END)` This uses the `seq` command in *bash* to create a sequence with an increment size of one. The following *for* loop gives the same output as the previous *for* loop.
 
 ```
