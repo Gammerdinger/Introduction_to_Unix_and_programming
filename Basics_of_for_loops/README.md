@@ -201,3 +201,11 @@ for i in {1..10}; do
   fi
 done
 ```
+
+## Practice Problems
+
+With a partner next to you, work on the following problems:
+
+1) Using a *for* loop to echo the even numbers between 4 and 14.
+
+2) **CHALLENGE** Design a *for* loop 
