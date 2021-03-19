@@ -109,3 +109,21 @@ Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`
     echo $i
   done
 ```
+
+### Lists
+
+Another common way people use *for* loops in *bash* is to interate through a list. An example of this would look like this list of colors:
+
+```
+for i in red orange yellow green blue indigo violet; do
+  echo $i
+done
+```
+
+If you had multi-word elements in this list (I would try to use underscores instead of spaces), but you can use `''` to capture it like we have done for dark orange, emerald green and pale blue below:
+
+```
+for i in red 'dark orange' yellow 'emerald green' 'pale blue' indigo violet; do
+  echo $i
+done
+```
