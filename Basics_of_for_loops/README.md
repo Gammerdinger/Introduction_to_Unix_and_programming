@@ -88,8 +88,20 @@ You can see that this is ***MUCH*** easier to work with than the previous C-styl
 
 #### $(seq START INCREMENT END)
 
--`$(seq START INCREMENT END)` This is similar  to `$(seq START END)` but this allows you to pick your increment step.
+This is similar  to `$(seq START END)` but this allows you to pick your increment step. If you wanted to go from 0 to 10 by twos you would use:
 
+```
+  for i in $(seq 0 2 10); do
+    echo $i
+  done
+```
 
 #### {START..INCREMENT..END} (if using Bash v4.0+) 
--`{START..INCREMENT..END}` If you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. 
+
+Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. 
+
+```
+  for i in {0..2..10}; do
+    echo $i
+  done
+```
