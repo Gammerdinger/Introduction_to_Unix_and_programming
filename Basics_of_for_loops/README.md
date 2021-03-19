@@ -62,7 +62,7 @@ Few people actually write their *bash for* loops as explicitly as I have done ab
 
 Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = i + 1` are equivilant terms. The only downside to this shorthand is that you *have* to to use increments of one, which for most people's purposes is what they want anyway.
 
-#### $(seq START END)
+#### *$(seq START END)*
 
 There are a variety of ways of setting the range with which you want your *for* loop to interate over. 
 
@@ -74,7 +74,7 @@ There are a variety of ways of setting the range with which you want your *for* 
   done
 ```
 
-#### {START..END}
+#### *{START..END}*
 
 -`{START..END}` This can further be shortened to look like this. This form is the most common form of *for* I find people use. An Example that is equivilant to the above examples is simply:
 
@@ -86,7 +86,7 @@ There are a variety of ways of setting the range with which you want your *for* 
 
 You can see that this is ***MUCH*** easier to work with than the previous C-style *for* loop. 
 
-#### $(seq START INCREMENT END)
+#### *$(seq START INCREMENT END)*
 
 This is similar  to `$(seq START END)` but this allows you to pick your increment step. If you wanted to go from 0 to 10 by twos you would use:
 
@@ -96,7 +96,7 @@ This is similar  to `$(seq START END)` but this allows you to pick your incremen
   done
 ```
 
-#### {START..INCREMENT..END} (if using Bash v4.0+) 
+#### *{START..INCREMENT..END}* (if using Bash v4.0+) 
 
 Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. 
 
