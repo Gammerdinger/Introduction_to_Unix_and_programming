@@ -41,7 +41,9 @@ This is the step size with which you would like to increase the counter variable
 
 This is what do you want the loop to do each time the condition is returned as TRUE. 
 
-<img src="for_loop.png" width="600" height="500" align="center" />
+<p align="center" >
+  <img src="for_loop.png" width="600" height="500" />
+</p>
 
 ## Examples
 
