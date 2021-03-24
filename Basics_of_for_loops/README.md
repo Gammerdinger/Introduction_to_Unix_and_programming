@@ -41,7 +41,7 @@ This is the step size with which you would like to increase the counter variable
 
 This is what do you want the loop to do each time the condition is returned as TRUE. 
 
-![for_loop](for_loop.png = 250x250)
+![for_loop](for_loop.png =250x250)
 
 ## Examples
 
