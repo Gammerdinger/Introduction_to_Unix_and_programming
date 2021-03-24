@@ -197,4 +197,4 @@ With a partner next to you, work on the following problems:
 
 1) Using a *for* loop to echo the even numbers between 4 and 14.
 
-2) **CHALLENGE** Design a *for* loop 
+2) **CHALLENGE** Within a directory you have several .fasta files that are taking up a ton of space. You woud like to gzip them up to save some space. Design a *for* loop to accomplish this task.
