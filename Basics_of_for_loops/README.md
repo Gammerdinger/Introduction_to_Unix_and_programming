@@ -23,6 +23,7 @@ Loops!!! All of these problems are perfect places to implement loops. Loops ar a
 * A counter variable
 * An end condition
 * An increment
+* Task
 
 ### Counter Variable
 
@@ -35,6 +36,10 @@ This is the condition that will continue to run your loop as long as it returns 
 ### Increment
 
 This is the step size with which you would like to increase the counter variable. It should be noted that when using *for* loops on a list of items, a default increment of 1 is assumed.
+
+### Task
+
+This is what do you want the loop to do each time the condition is returned as TRUE. 
 
 ## Examples
 
