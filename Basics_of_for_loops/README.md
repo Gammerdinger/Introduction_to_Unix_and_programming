@@ -159,7 +159,7 @@ for i in *.fastq; do
 done
 ```
 
-### Combinations
+### Nested *for* loops
 
 One of the great parts of loops is that you can put them within one another or use any commands in or around them. A simple example could look like this:
 
@@ -190,17 +190,6 @@ This would produce output like:
 5c
 ```
 
-You could even add conditional statements like this one that will skip the number four:
-
-```
-for i in {1..10}; do
-  if [[ $i == 4 ]]; then
-    continue
-  else
-    echo $i
-  fi
-done
-```
 
 ## Practice Problems
 
