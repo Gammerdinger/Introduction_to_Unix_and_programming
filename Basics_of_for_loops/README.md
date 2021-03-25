@@ -48,7 +48,7 @@ This is the step size with which you would like to increase the counter variable
 
 ## Examples
 
-A C-style *for* loop in *bash* would look like this:
+A *C*-style *for* loop in *bash* would look like this:
 
 ```
   for (( i = 0; i <= 10; i = i + 1 )); do
