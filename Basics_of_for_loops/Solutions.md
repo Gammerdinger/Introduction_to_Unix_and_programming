@@ -16,7 +16,7 @@ D) Increment
 
 ***Question 2***
 
-Which using the command line, which of these *for* loops will run the counter variable from 1 to 5 with an increment of 2?
+Without using the command line, which of these *for* loops will *echo* the counter variable from 1 to 5 with an increment of 2?
 
 A)
 
