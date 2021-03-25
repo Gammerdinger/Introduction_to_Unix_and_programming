@@ -89,6 +89,8 @@ for (( i = 0; i <= 10; i = i )); do
 done
 ```
 
+As you can see in this example, I have just set my increment to be equal to itself and not to actually increment. In this case, *i* is always 0 and thus it always returns the end condition of `i <= 10` as TRUE.
+
 ### A few shortcuts
 
 Few people actually write their *bash for* loops as explicitly as I have done above. There are a few shorthands that you will often see. 
@@ -210,8 +212,6 @@ This would produce output like:
 5c
 ```
 
-
-As you can see in this example, I have just set my increment to be equal to itself and not to actually increment. In this case, *i* is always 0 and thus it always returns the end condition of `i <= 10` as TRUE.
 
 ## Practice Problems
 
