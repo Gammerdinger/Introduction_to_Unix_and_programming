@@ -211,6 +211,9 @@ This would produce output like:
 5b
 5c
 ```
+## Comprehension Check
+
+http://www.quiz-maker.com/Q0UQ2W1UX
 
 
 ## Practice Problems
