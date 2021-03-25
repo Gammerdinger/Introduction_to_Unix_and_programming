@@ -225,7 +225,7 @@ C) Associative Array
 
 D) Increment
 
-***Quesiton 2***
+***Question 2***
 
 Which using the command line, which of these *for* loops will run the counter variable from 1 to 5 with an increment of 2?
 
