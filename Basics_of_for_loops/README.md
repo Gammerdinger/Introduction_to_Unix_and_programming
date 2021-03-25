@@ -173,7 +173,7 @@ for i in $(ls); do
 done
 ```
 
-Or equally as interesting, perhaps you wanted to *echo* to each of your files that had a .txt extension. You could simply use:
+Or equally as interesting, perhaps you want to *echo* to each of your files that has a .txt extension. You could simply use:
 
 ```
 for i in *.txt; do
