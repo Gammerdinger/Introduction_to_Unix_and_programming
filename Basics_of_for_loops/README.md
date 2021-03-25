@@ -107,7 +107,7 @@ Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = 
 
 #### *$(seq START END)*
 
--`$(seq START END)` This uses the `seq` command in *bash* to create a sequence with an increment size of one. The following *for* loop gives the same output as the previous *for* loop.
+Another option for initializing the counter variable, defining the end condition and setting the increment is by using `$(seq START END)`. This uses the `seq` command in *bash* to create a sequence with an increment size of one. The following *for* loop gives the same output as the previous *for* loop.
 
 ```
   for i in $(seq 0 10); do
@@ -117,7 +117,7 @@ Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = 
 
 #### *{START..END}*
 
--`{START..END}` This can further be shortened to look like this. This form is the most common form of *for* I find people use. An example that is equivilant to the above examples is simply:
+Another alternative and shorter way of accomplishing this task is with `{START..END}`. From what I can tell, this form is the most common form of *for* loops. An example that is equivilant to the above examples is simply:
 
 ```
   for i in {0..10}; do
