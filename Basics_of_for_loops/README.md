@@ -239,14 +239,14 @@ done
 
 B) 
 ```
-for i in {1..5..1}; do 
+for i in {1..5}; do 
   echo $i; 
 done
 ```
 
 C)
 ```
-for i in $(seq 1 2 1);do 
+for i in $(seq 1 5);do 
   echo $i; 
 done
 ```
