@@ -173,10 +173,10 @@ for i in $(ls); do
 done
 ```
 
-Or equally as interesting, perhaps you wanted to *echo* to each of your files that had a .fastq extension. You could simply use:
+Or equally as interesting, perhaps you wanted to *echo* to each of your files that had a .txt extension. You could simply use:
 
 ```
-for i in *.fastq; do
+for i in *.txt; do
   echo $i
 done
 ```
