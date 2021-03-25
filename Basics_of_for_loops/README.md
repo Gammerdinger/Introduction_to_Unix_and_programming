@@ -157,6 +157,8 @@ for color in red orange yellow green blue indigo violet; do
 done
 ```
 
+***Note:*** This is a good place to note that your variable can be named anything. It could be a single letter like i or j, but oftentimes it is considered best practice to name your variable something meaningful so it is easier for you and others to read your code. In the above case, you can see that we named the variable `color`. 
+
 If you had multi-word elements in this list (I would try to use underscores instead of spaces), but you can use `''` to capture it like we have done for dark orange, emerald green and pale blue below:
 
 ```
