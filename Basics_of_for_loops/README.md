@@ -22,8 +22,9 @@ Loops!!! All of these problems are perfect places to implement loops. Loops ar a
 
 * A counter variable
 * An end condition
-* An increment
 * Task
+* An increment
+
 
 ### Counter Variable
 
@@ -33,13 +34,15 @@ This will be the variable that you will be changing with your *for* loop.
 
 This is the condition that will continue to run your loop as long as it returns true. 
 
+### Task
+
+This is what do you want the loop to do each time the condition is returned as TRUE. 
+
 ### Increment
 
 This is the step size with which you would like to increase the counter variable. It should be noted that when using *for* loops on a list of items, a default increment of 1 is assumed.
 
-### Task
-
-This is what do you want the loop to do each time the condition is returned as TRUE. 
+Note: 
 
 <p align="center" >
   <img src="for_loop.png" width="600" height="500" />
@@ -199,6 +202,17 @@ This would produce output like:
 5c
 ```
 
+### Infinite Loops
+
+Infinite loops are loops where the end condition is never met and thus would continue infinitely. Once this happens, no worries, everyone does this sometimes on accident. To end an infinite loop, just hit `Control + C` to cancel the command. An example of an infinite loop could be something like this:
+
+```
+for (( i = 0; i <= 10; i = i )); do
+    echo $i
+done
+```
+
+As you can see in this example, I have just set my increment to be equal to itself and not to actually increment. In this case, *i* is always 0 and thus it always returns the end condition of `i <= 10` as TRUE.
 
 ## Practice Problems
 
