@@ -192,7 +192,8 @@ for i in {1..5}; do
   done
 done
 ```
-This would produce output like:
+
+In this case, what is happening is that we are looping through the numbers 1 to 5, but also running a loop on ***each*** number that goes though the letters a, b and c. This would produce output like:
 
 ```
 1a
