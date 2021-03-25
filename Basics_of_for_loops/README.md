@@ -213,7 +213,45 @@ This would produce output like:
 ```
 ## Comprehension Check
 
-http://www.quiz-maker.com/Q0UQ2W1UX
+***Question 1***
+
+Which of these is **NOT** a necessary part of a *for* loop?
+
+A) Counter Variable
+
+B) End Condition
+
+C) Associative Array
+
+D) Increment
+
+***Quesiton 2***
+
+Which using the command line, which of these *for* loops will run the counter variable from 1 to 5 with an increment of 2?
+
+A)
+
+```
+for (( i = 1; i <= 5; i = i + 2 )); do
+  echo $i
+done
+```
+
+B) 
+```
+for i in {1..5..2}; do 
+  echo $i; 
+done
+```
+
+C)
+```
+for i in $(seq 1 2 5);do 
+  echo $i; 
+done
+```
+
+D) All of the above
 
 
 ## Practice Problems
