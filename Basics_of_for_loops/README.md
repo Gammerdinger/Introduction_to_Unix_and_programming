@@ -52,7 +52,7 @@ A *C*-style *for* loop in *bash* would look like this:
 
 ```
   for (( i = 0; i <= 10; i = i + 1 )); do
-    echo $i
+    echo $i;
   done
 ```
 And it should produce this output:
@@ -85,7 +85,7 @@ Infinite loops are loops where the end condition is never met and thus would con
 
 ```
 for (( i = 0; i <= 10; i = i )); do
-    echo $i
+    echo $i;
 done
 ```
 
@@ -101,7 +101,7 @@ Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = 
 
 ```
   for (( i = 0; i <= 10; i++ )); do
-    echo $i
+    echo $i;
   done
 ```
 
@@ -111,7 +111,7 @@ Another option for initializing the counter variable, defining the end condition
 
 ```
   for i in $(seq 0 10); do
-    echo $i
+    echo $i;
   done
 ```
 
@@ -121,7 +121,7 @@ Another alternative and shorter way of accomplishing this task is with `{START..
 
 ```
   for i in {0..10}; do
-    echo $i
+    echo $i;
   done
 ```
 
@@ -133,7 +133,7 @@ This is similar  to `$(seq START END)` but this allows you to pick your incremen
 
 ```
   for i in $(seq 0 2 10); do
-    echo $i
+    echo $i;
   done
 ```
 
@@ -143,7 +143,7 @@ Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`
 
 ```
   for i in {0..10..2}; do
-    echo $i
+    echo $i;
   done
 ```
 
@@ -153,7 +153,7 @@ Another common way people use *for* loops in *bash* is to interate through a lis
 
 ```
 for i in red orange yellow green blue indigo violet; do
-  echo $i
+  echo $i;
 done
 ```
 
@@ -161,7 +161,7 @@ If you had multi-word elements in this list (I would try to use underscores inst
 
 ```
 for i in red 'dark orange' yellow 'emerald green' 'pale blue' indigo violet; do
-  echo $i
+  echo $i;
 done
 ```
 
@@ -169,7 +169,7 @@ This might seem not particularly useful until you realize that you can create th
 
 ```
 for i in $(ls); do
-  echo $i
+  echo $i;
 done
 ```
 
@@ -177,7 +177,7 @@ Or equally as interesting, perhaps you want to *echo* to each of your files that
 
 ```
 for i in *.txt; do
-  echo $i
+  echo $i;
 done
 ```
 
@@ -188,7 +188,7 @@ One of the great parts of loops is that you can put them within one another. A s
 ```
 for i in {1..5}; do
   for j in a b c; do
-    echo $i$j
+    echo $i$j;
   done
 done
 ```
@@ -234,7 +234,7 @@ A)
 
 ```
 for (( i = 1; i <= 5; i = i + 1 )); do
-  echo $i
+  echo $i;
 done
 ```
 
