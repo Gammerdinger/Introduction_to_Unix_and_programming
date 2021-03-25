@@ -42,8 +42,6 @@ This is what do you want the loop to do each time the condition is returned as T
 
 This is the step size with which you would like to increase the counter variable. It should be noted that when using *for* loops on a list of items, a default increment of 1 is assumed.
 
-Note: 
-
 <p align="center" >
   <img src="for_loop.png" width="600" height="500" />
 </p>
