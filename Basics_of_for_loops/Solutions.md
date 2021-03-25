@@ -13,7 +13,7 @@ done
 
 ## Question 2
 
-Within a directory you have five .fasta files (named sequence_1.fasta, sequence_2.fasta, sequence_3.fasta, sequence_4.fasta, sequence_5.fasta) that are taking up some space. You woud like to *gzip* only the odd numbered sequences. Design a *for* loop to accomplish this task.
+Within a directory you have five .fasta files (named sequence_1.fasta, sequence_2.fasta, sequence_3.fasta, sequence_4.fasta, sequence_5.fasta) that are taking up some space. You woud like to compress only the odd numbered sequences using *gzip*. Design a *for* loop to accomplish this task.
 
 ```
 for i in {1..5..2}; do 
