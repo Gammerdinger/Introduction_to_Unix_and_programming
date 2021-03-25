@@ -9,7 +9,7 @@ You have a long list of items that you would like a series of commands to be ite
 
 ## The Solution
 
-Loops!!! All of these problems are perfect places to implement loops. Loops ar a common programming structure found in virtually all programming languages. Generally speaking, there are several varieties of loops including *for* loops, *while* loops, *until* loops among others. The most common loops are *for* loops, but the other loops certainly have their places. For example, *while* loops are frequently used for reading files. In this tutorial, we are going to focus on *for* loops.
+Loops!!! All of these problems are perfect places to implement loops. Loops are a common programming structure found in virtually all programming languages. Generally speaking, there are several varieties of loops including *for* loops, *while* loops, *until* loops among others. The most common loops are *for* loops, but the other loops certainly have their places. For example, *while* loops are frequently used for reading files. In this tutorial, we are going to focus on *for* loops.
 
 ## Expected Learning Outcomes
 
@@ -22,7 +22,7 @@ Loops!!! All of these problems are perfect places to implement loops. Loops ar a
 
 * A counter variable
 * An end condition
-* Task
+* A task
 * An increment
 
 
@@ -32,11 +32,11 @@ This will be the variable that you will be changing with your *for* loop.
 
 ### End Condition
 
-This is the condition that will continue to run your loop as long as it returns true. 
+This is the condition that will continue to run your loop as long as it returns TRUE. 
 
 ### Task
 
-This is what do you want the loop to do each time the condition is returned as TRUE. 
+This is what do you want the loop to do each time the condition returns TRUE. 
 
 ### Increment
 
@@ -81,7 +81,7 @@ Let's break down each of these components.
 
 ### Infinite Loops
 
-Infinite loops are loops where the end condition is never met and thus would continue infinitely. Once this happens, no worries, everyone does this sometimes on accident. To end an infinite loop, just hit `Control + C` to cancel the command. An example of an infinite loop could be something like this:
+Infinite loops are loops where the end condition is never met and thus would continue infinitely. Once this happens, no worries, everyone does this on accident sometimes. To end an infinite loop, just hit `Control + C` and this will cancel the command. An example of an infinite loop could be something like this:
 
 ```
 for (( i = 0; i <= 10; i = i )); do
@@ -97,7 +97,7 @@ Few people actually write their *bash for* loops as explicitly as I have done ab
 
 #### *i++*
 
-Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = i + 1` are equivilant terms. The only downside to this shorthand is that you *have* to to use increments of one, which for most people's purposes is what they want anyway. Something like this would look like:
+Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = i + 1` are equivilant terms. The only downside to this shorthand is that you *have* to use increments of one, which for most people's purposes is what they want anyway. An example of this would look like:
 
 ```
   for (( i = 0; i <= 10; i++ )); do
@@ -117,7 +117,7 @@ Instead of `i = i + 1`, people will often shorten this to `i++`. `i++` and `i = 
 
 #### *{START..END}*
 
--`{START..END}` This can further be shortened to look like this. This form is the most common form of *for* I find people use. An Example that is equivilant to the above examples is simply:
+-`{START..END}` This can further be shortened to look like this. This form is the most common form of *for* I find people use. An example that is equivilant to the above examples is simply:
 
 ```
   for i in {0..10}; do
@@ -139,7 +139,7 @@ This is similar  to `$(seq START END)` but this allows you to pick your incremen
 
 #### *{START..END..INCREMENT}* (if using Bash v4.0+) 
 
-Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. 
+Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`, but with the increment component added to it. To once again go from 0 to 10 by twos you would say:
 
 ```
   for i in {0..10..2}; do
@@ -165,7 +165,7 @@ for i in red 'dark orange' yellow 'emerald green' 'pale blue' indigo violet; do
 done
 ```
 
-This might seem not particularly useful until you realize that you can create these lists using other commands in *bash*. For example, you may want to make a list of every file in your current directory this like:
+This might seem not particularly useful until you realize that you can create these lists using other commands in *bash*. The above `$(seq START END)` command is an example of this. Another example could be that you may want to make a list of every file in your current directory this like:
 
 ```
 for i in $(ls); do
@@ -173,7 +173,7 @@ for i in $(ls); do
 done
 ```
 
-Or equally as interesting, perhaps you wanted to do something to each of your files that had a .fastq extension. You could siply use:
+Or equally as interesting, perhaps you wanted to *echo* to each of your files that had a .fastq extension. You could simply use:
 
 ```
 for i in *.fastq; do
@@ -183,7 +183,7 @@ done
 
 ### Nested *for* loops
 
-One of the great parts of loops is that you can put them within one another or use any commands in or around them. A simple example could look like this:
+One of the great parts of loops is that you can put them within one another. A simple example could look like this:
 
 ```
 for i in {1..5}; do
@@ -217,6 +217,6 @@ This would produce output like:
 
 With a partner next to you, work on the following problems:
 
-1) Using a *for* loop to echo the numbers between 4 and 14.
+1) Use a *for* loop to echo the numbers between 4 and 14.
 
-2) **CHALLENGE** Within a directory you have five .fasta files (named sequence_1.fasta, sequence_2.fasta, sequence_3.fasta, sequence_4.fasta, sequence_5.fasta) that are taking up some space. You would like to compress only the odd numbered sequences using *gzip*. Design a *for* loop to accomplish this task.
+2) **CHALLENGE** Within a directory you have five .fasta files (named sequence_1.fasta, sequence_2.fasta, sequence_3.fasta, sequence_4.fasta, sequence_5.fasta) that are taking up some space. You would like to compress only the odd numbered sequences using the *gzip* command. Design a *for* loop to accomplish this task.
