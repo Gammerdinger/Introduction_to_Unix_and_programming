@@ -81,6 +81,16 @@ Let's break down each of these components.
 
 -`i = i + 1` This is your increment. After each iteration of your loop, your counter variable will be increased by 1. Of course, you could set the value added to anything and you could do something like `i = i + 2` if you wanted the increment step to be two each time.
 
+### Infinite Loops
+
+Infinite loops are loops where the end condition is never met and thus would continue infinitely. Once this happens, no worries, everyone does this sometimes on accident. To end an infinite loop, just hit `Control + C` to cancel the command. An example of an infinite loop could be something like this:
+
+```
+for (( i = 0; i <= 10; i = i )); do
+    echo $i
+done
+```
+
 ### A few shortcuts
 
 Few people actually write their *bash for* loops as explicitly as I have done above. There are a few shorthands that you will often see. 
@@ -202,15 +212,6 @@ This would produce output like:
 5c
 ```
 
-### Infinite Loops
-
-Infinite loops are loops where the end condition is never met and thus would continue infinitely. Once this happens, no worries, everyone does this sometimes on accident. To end an infinite loop, just hit `Control + C` to cancel the command. An example of an infinite loop could be something like this:
-
-```
-for (( i = 0; i <= 10; i = i )); do
-    echo $i
-done
-```
 
 As you can see in this example, I have just set my increment to be equal to itself and not to actually increment. In this case, *i* is always 0 and thus it always returns the end condition of `i <= 10` as TRUE.
 
