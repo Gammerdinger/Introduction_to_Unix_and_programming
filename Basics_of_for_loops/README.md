@@ -152,32 +152,32 @@ Similarly, if you are running Bash v4.0+, then this is similar to `{START..END}`
 Another common way people use *for* loops in *bash* is to interate through a list. An example of this would look like this list of colors:
 
 ```
-for i in red orange yellow green blue indigo violet; do
-  echo $i;
+for color in red orange yellow green blue indigo violet; do
+  echo $color;
 done
 ```
 
 If you had multi-word elements in this list (I would try to use underscores instead of spaces), but you can use `''` to capture it like we have done for dark orange, emerald green and pale blue below:
 
 ```
-for i in red 'dark orange' yellow 'emerald green' 'pale blue' indigo violet; do
-  echo $i;
+for color in red 'dark orange' yellow 'emerald green' 'pale blue' indigo violet; do
+  echo $color;
 done
 ```
 
 This might seem not particularly useful until you realize that you can create these lists using other commands in *bash*. The above `$(seq START END)` command is an example of this. Another example could be that you may want to make a list of every file in your current directory this like:
 
 ```
-for i in $(ls); do
-  echo $i;
+for file in $(ls); do
+  echo $file;
 done
 ```
 
 Or equally as interesting, perhaps you want to *echo* to each of your files that has a .txt extension. You could simply use:
 
 ```
-for i in *.txt; do
-  echo $i;
+for txt_file in *.txt; do
+  echo $txt_file;
 done
 ```
 
@@ -186,9 +186,9 @@ done
 One of the great parts of loops is that you can put them within one another. A simple example could look like this:
 
 ```
-for i in {1..5}; do
-  for j in a b c; do
-    echo $i$j;
+for number in {1..5}; do
+  for letter in a b c; do
+    echo $number$letter;
   done
 done
 ```
