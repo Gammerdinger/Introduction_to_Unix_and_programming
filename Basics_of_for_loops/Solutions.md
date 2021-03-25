@@ -16,26 +16,26 @@ D) Increment
 
 ***Question 2***
 
-Without using the command line, which of these *for* loops will *echo* the counter variable from 1 to 5 with an increment of 2?
+Without using the command line, which of these *for* loops will *echo* the counter variable from 1 to 5 with an increment of 1?
 
 A)
 
 ```
-for (( i = 1; i <= 5; i = i + 2 )); do
+for (( i = 1; i <= 5; i = i + 1 )); do
   echo $i
 done
 ```
 
 B) 
 ```
-for i in {1..5..2}; do 
+for i in {1..5}; do 
   echo $i; 
 done
 ```
 
 C)
 ```
-for i in $(seq 1 2 5);do 
+for i in $(seq 1 5);do 
   echo $i; 
 done
 ```
