@@ -212,7 +212,7 @@ In this case, what is happening is that we are looping through the numbers 1 to 
 5b
 5c
 ```
-## Comprehension Check
+## Concept Check
 
 ***Question 1***
 
@@ -259,6 +259,6 @@ D) All of the above
 
 With a partner next to you, work on the following problems:
 
-1) Use a *for* loop to echo the numbers between 4 and 14.
+1) Use a *for* loop to *echo* the numbers between 4 and 14.
 
 2) **CHALLENGE** Within a directory you have five .fasta files (named sequence_1.fasta, sequence_2.fasta, sequence_3.fasta, sequence_4.fasta, sequence_5.fasta) that are taking up some space. You would like to compress only the odd numbered sequences using the *gzip* command. Design a *for* loop to accomplish this task.
