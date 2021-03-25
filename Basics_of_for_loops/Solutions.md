@@ -2,9 +2,9 @@
 
 ## Comprehension Check
 
-*Question 1*
+***Question 1***
 
-Which of these is NOT a necessary part of a *for* loop?
+Which of these is **NOT** a necessary part of a *for* loop?
 
 A) Counter Variable
 
@@ -14,9 +14,9 @@ B) End Condition
 
 D) Increment
 
-*Quesiton 2*
+***Quesiton 2***
 
-Which of these for loops will run the counter variable from 1 to 5 with an increment of 2?
+Which using the command line, which of these *for* loops will run the counter variable from 1 to 5 with an increment of 2?
 
 A)
 
